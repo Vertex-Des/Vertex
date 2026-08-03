@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice — Vertex</title>
+<meta name="description" content="Practice SAT math problems solvable with Desmos, organized by category, with live calculators and step-by-step walkthroughs.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">V</span>
+      Vertex
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="learn.html">Learn Desmos</a></li>
+      <li><a href="practice.html" class="active">Practice</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="practice-header">
+  <div class="container">
+    <h1>Practice</h1>
+    <p class="section-intro" style="margin-bottom:12px;">160 Hard-difficulty SAT-style problems, organized into the four Digital SAT math domains. Try each one, check your answer, then reveal a real Desmos walkthrough if you get stuck.</p>
+    <div class="note practice-note">
+      <strong>A note on scope:</strong> Vertex only covers SAT math problems that can be solved with Desmos —
+      not every SAT problem can be. This is intentional focus, not full SAT prep.
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="category-nav">
+    <a href="#algebra">Algebra</a>
+    <a href="#advanced-math">Advanced Math</a>
+    <a href="#data-analysis">Problem-Solving &amp; Data Analysis</a>
+    <a href="#geometry-trig">Geometry &amp; Trigonometry</a>
+  </nav>
+</div>
+
+<main class="container" id="problem-container">
+  <section class="category-section" id="algebra">
+    <h2>Algebra <span class="category-count" data-count-for="Algebra"></span></h2>
+    <div class="problem-viewer" data-category="Algebra"></div>
+  </section>
+
+  <section class="category-section" id="advanced-math">
+    <h2>Advanced Math <span class="category-count" data-count-for="Advanced Math"></span></h2>
+    <div class="problem-viewer" data-category="Advanced Math"></div>
+  </section>
+
+  <section class="category-section" id="data-analysis">
+    <h2>Problem-Solving &amp; Data Analysis <span class="category-count" data-count-for="Problem-Solving and Data Analysis"></span></h2>
+    <div class="problem-viewer" data-category="Problem-Solving and Data Analysis"></div>
+  </section>
+
+  <section class="category-section" id="geometry-trig">
+    <h2>Geometry &amp; Trigonometry <span class="category-count" data-count-for="Geometry and Trigonometry"></span></h2>
+    <div class="problem-viewer" data-category="Geometry and Trigonometry"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Vertex is a student-run nonprofit. Founded by Nikhil Cherukuvada &amp; Ignati Darakos.
+  </div>
+</footer>
+
+<script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<script src="js/practice.js"></script>
+</body>
+</html>

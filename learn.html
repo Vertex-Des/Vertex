@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Desmos — Vertex</title>
+<meta name="description" content="A hands-on overview of the Desmos tools you need for the SAT: graphing, sliders, regressions, and statistics.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">V</span>
+      Vertex
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="learn.html" class="active">Learn Desmos</a></li>
+      <li><a href="practice.html">Practice</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom: 40px;">
+  <div class="container">
+    <h1>Learn Desmos, then solve real SAT problems</h1>
+    <p>A quick tour of the tools you'll actually use on the SAT — try them yourself in the calculator below.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <h2>Try it live</h2>
+    <p class="section-intro">This is a real, working Desmos calculator. Type an equation, drag a point, add a slider — nothing here is a screenshot.</p>
+    <div id="learn-calculator" class="desmos-embed"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <h2>The tools you need</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Graphing equations</h3>
+        <p>Type any equation into an expression line — <code>y=2x+3</code> — and Desmos plots it instantly. Two equations plotted together show their intersection point, which is the solution to a system of equations.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Sliders</h3>
+        <p>Type an equation with an extra constant, like <code>y=ax+3</code>, and Desmos offers to add a slider for <code>a</code>. Drag it to see how changing that constant reshapes the graph — useful for exploring quadratics and transformations.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Regressions</h3>
+        <p>Add a table (click the <code>+</code> and choose Table), and enter your data — Desmos labels the columns <code>x<sub>1</sub></code> and <code>y<sub>1</sub></code> automatically. Then add a new expression: <code>y<sub>1</sub> ~ mx<sub>1</sub>+b</code>. Desmos fits the best-fit line and reports the values of <code>m</code> and <code>b</code> directly — swap in <code>y<sub>1</sub> ~ ax<sub>1</sub><sup>2</sup>+bx<sub>1</sub>+c</code> for a quadratic fit.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Statistics on a list</h3>
+        <p>Enter a list using curly braces, like <code>L={2,4,4,6,8}</code>. Then on new lines, type <code>mean(L)</code>, <code>median(L)</code>, or <code>stdev(L)</code> — Desmos computes each statistic instantly, no formula required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <h2>How to build up your skills</h2>
+    <p class="section-intro">Work through Practice in this order and each Desmos tool will click before you need the next one:</p>
+    <ol>
+      <li><strong>Start with systems of equations.</strong> Graph two lines and read the intersection point — this alone replaces most of Algebra's "solve for x and y" problems.</li>
+      <li><strong>Move to regressions.</strong> Once you're comfortable graphing, let Desmos fit a line or curve to a table of points instead of solving for constants by hand.</li>
+      <li><strong>Finish with chained ratio/percentage problems.</strong> These look intimidating in words ("a is 500% of b, and b is 25% of c...") but become simple once you set them up as equations and let Desmos solve.</li>
+    </ol>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    Vertex is a student-run nonprofit. Founded by Nikhil Cherukuvada &amp; Ignati Darakos.
+  </div>
+</footer>
+
+<script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<script src="js/learn.js"></script>
+</body>
+</html>
