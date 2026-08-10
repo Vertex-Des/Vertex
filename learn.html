@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Learn Desmos — Vertex</title>
 <meta name="description" content="A hands-on overview of the Desmos tools you need for the SAT: graphing, sliders, regressions, and statistics.">
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -65,13 +68,56 @@
 
 <section class="section" style="padding-top:0;">
   <div class="container">
-    <h2>How to build up your skills</h2>
-    <p class="section-intro">Work through Practice in this order and each Desmos tool will click before you need the next one:</p>
-    <ol>
-      <li><strong>Start with systems of equations.</strong> Graph two lines and read the intersection point — this alone replaces most of Algebra's "solve for x and y" problems.</li>
-      <li><strong>Move to regressions.</strong> Once you're comfortable graphing, let Desmos fit a line or curve to a table of points instead of solving for constants by hand.</li>
-      <li><strong>Finish with chained ratio/percentage problems.</strong> These look intimidating in words ("a is 500% of b, and b is 25% of c...") but become simple once you set them up as equations and let Desmos solve.</li>
-    </ol>
+    <h2>Desmos cheat sheet</h2>
+    <p class="section-intro">Copy‑paste-able prompts for the tricks that come up over and over in Practice. Type any of these straight into an expression line.</p>
+    <div class="note" style="margin-bottom: 24px;">
+      <strong>One rule to know:</strong> in any regression, the variable names in your table or list must be <code>x&#8321;</code> and <code>y&#8321;</code> (typed as <code>x_1</code> and <code>y_1</code> — Desmos turns the <code>1</code> into a subscript automatically) — that part is fixed. Every other letter in the equation (constants like <code>a</code>, <code>b</code>, <code>m</code>, <code>c</code>, <code>k</code>) can be whatever you want, uppercase included, as long as it isn't <code>x</code>, <code>y</code>, or <code>r</code> (bare <code>r</code> triggers Desmos's polar mode).
+    </div>
+    <div class="prompt-grid">
+      <div class="prompt-card">
+        <h3>Mean, median, standard deviation</h3>
+        <code>mean(L)</code>
+        <code>median(L)</code>
+        <code>stdev(L)</code>
+        <p>List your values with curly braces first — <code>L={2,4,4,6,8}</code> — then run any of these on <code>L</code>. No formulas to remember.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Distance between two points</h3>
+        <code>distance((x&#8321;,y&#8321;),(x&#8322;,y&#8322;))</code>
+        <p>Gives the straight-line distance instantly — perfect for side lengths, radii, and diagonals without touching the distance formula by hand.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Linear regression</h3>
+        <code>y&#8321; ~ mx&#8321;+b</code>
+        <p>Enter a table of points, then add this line. Desmos reports <code>m</code> and <code>b</code> directly under Regression Parameters.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Quadratic &amp; exponential regression</h3>
+        <code>y&#8321; ~ ax&#8321;&sup2;+bx&#8321;+c</code>
+        <code>y&#8321; ~ a&middot;b^x&#8321;</code>
+        <p>Same idea as linear regression — swap the right side for the shape of the curve you're fitting.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Solve for an unknown constant</h3>
+        <code>10 ~ a(0-8)&sup2;+1034</code>
+        <p>Plug a known point straight into an equation with an unknown constant (here, <code>a</code>) and regress — Desmos solves for it directly, no algebra required.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Bundle several relationships at once</h3>
+        <code>[a,a,c] ~ [230% of b, 60% of c, p% of b]</code>
+        <p>Stack multiple equal-value relationships into one vector regression when a problem chains several percentages or variables together.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Restrict the domain</h3>
+        <code>y&#8321; ~ mx&#8321;+b {x&#8321;&gt;-7}</code>
+        <p>Add curly braces after a regression to keep Desmos from picking points outside where the equation is actually valid.</p>
+      </div>
+      <div class="prompt-card">
+        <h3>Area of a polygon</h3>
+        <code>polygon((x&#8321;,y&#8321;),(x&#8322;,y&#8322;),(x&#8323;,y&#8323;))</code>
+        <p>Feed in the vertices of any shape and Desmos both draws it and can report distances between its corners — handy for area problems on the coordinate plane.</p>
+      </div>
+    </div>
   </div>
 </section>
 

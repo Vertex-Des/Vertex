@@ -23,10 +23,14 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
   background: var(--white);
   line-height: 1.55;
+}
+
+h1, h2, h3, h4, h5, h6, .brand {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 a {
@@ -79,6 +83,7 @@ img {
   align-items: center;
   justify-content: center;
   color: white;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.95rem;
   font-weight: 800;
 }
@@ -200,6 +205,56 @@ img {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.88em;
+  background: var(--green-light);
+  color: var(--green-dark);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ---------- Prompt / cheat-sheet cards ---------- */
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.prompt-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prompt-card h3 {
+  margin: 0;
+  color: var(--green-dark);
+  font-size: 1.02rem;
+}
+
+.prompt-card > code {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.prompt-card p code {
+  white-space: nowrap;
+}
+
+.prompt-card p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
 }
 
 /* ---------- Callout / note ---------- */
@@ -416,6 +471,33 @@ img {
 .problem-question {
   margin: 0;
   font-size: 1.02rem;
+}
+
+.problem-choices {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.problem-choices li {
+  font-size: 1.02rem;
+}
+
+.attempt-label {
+  margin: 4px 20px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+
+.desmos-embed.attempt {
+  width: calc(100% - 40px);
+  margin: 0 20px 18px;
 }
 
 .problem-check-row {

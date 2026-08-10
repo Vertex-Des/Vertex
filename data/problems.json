@@ -3,69 +3,82 @@
     "id": "alg-1",
     "category": "Algebra",
     "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "Solve for x: 3(2x − 1) − 4 = 2(x + 5) + 3x",
-    "answer": "17",
+    "question": "(12x + 28)/4 − s/13 = r(x − 8). In the given equation, s and r are constants, and s > 0. If the equation has infinitely many solutions, what is the value of s?",
+    "answer": "403",
     "answerType": "numeric",
     "desmosExpressions": [
-      "3(2x-1)-4=2(x+5)+3x"
+      "x_1=8",
+      "(12x_1+28)/4-s/13\\sim r(x_1-8)\\left\\{s>0\\right\\}",
+      "r=[1...10]"
+    ],
+    "steps": [
+      {
+        "text": "The right side r(x−8) is always 0 when x = 8, no matter what r is. So set x₁ = 8 and enter the equation as a regression: (12x₁+28)/4 − s/13 ~ r(x₁−8) {s>0}."
+      },
+      {
+        "text": "Desmos solves it instantly under REGRESSION PARAMETERS: s = 403 (RMSE = 0). Try r = [1...10] as a slider list to confirm it stays s = 403 for every value of r.",
+        "image": "assets/screenshots/alg-1.png"
+      }
     ],
     "bounds": {
       "left": -5,
-      "right": 25,
-      "bottom": -10,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Type 3(2x-1)-4=2(x+5)+3x into Desmos exactly as written — no need to expand it by hand first."
-      },
-      {
-        "text": "Desmos plots the solution as a vertical line at x = 17.",
-        "image": "assets/screenshots/alg-1.png"
-      }
-    ]
+      "right": 15,
+      "bottom": -20,
+      "top": 5
+    }
   },
   {
     "id": "alg-2",
     "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "Solve for x: (2x − 1)/3 = (x + 4)/2",
-    "answer": "14",
-    "answerType": "numeric",
+    "subcategory": "Systems of linear equations",
+    "question": "The graph shows a system of two linear equations, one line crossing the y-axis around y=6.4 and the other around y=3.2, both meeting at the point (8,0). Which of the following systems of equations is best represented by the graph?",
+    "answer": "4x+10y=32 and -8x-10y=-64",
     "desmosExpressions": [
-      "\\frac{2x-1}{3}=\\frac{x+4}{2}"
+      "4x+10y=32",
+      "-8x-10y=-64"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 20,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Type (2x-1)/3 = (x+4)/2 into Desmos — it formats the fractions automatically as you type."
+        "text": "Guess and check: the graph shows both lines meeting at (8,0), with positive y-intercepts. Test each answer choice by graphing it in Desmos and comparing to the picture, rather than solving algebraically."
       },
       {
-        "text": "The vertical line crosses the x-axis at x = 14.",
+        "text": "Only option D — 4x+10y=32 and −8x−10y=−64 — graphs as two lines crossing the y-axis at positive values (3.2 and 6.4) and meeting at (8,0), matching the figure.",
         "image": "assets/screenshots/alg-2.png"
       }
+    ],
+    "answerType": null,
+    "bounds": {
+      "left": -3,
+      "right": 12,
+      "bottom": -3,
+      "top": 8
+    },
+    "choices": [
+      "A) 8x+4y=32 and −10x−4y=−64",
+      "B) 8x−4y=32 and −10x+4y=−64",
+      "C) 4x−10y=32 and −8x+10y=−64",
+      "D) 4x+10y=32 and −8x−10y=−64"
     ]
   },
   {
     "id": "alg-3",
     "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "Solve for x: 2(3x + 4) = 6x + 5. If there is no solution, type \"no solution\".",
-    "answer": "no solution",
+    "subcategory": "Systems of linear equations",
+    "question": "2(8x) + 4(7y) = 12 and −2(8x) + 4(7y) = 12. The solution to the given system of equations is (x, y). What is the value of 8x + 7y?",
+    "answer": "3",
+    "answerType": "numeric",
     "desmosExpressions": [
-      "2(3x+4)=6x+5"
+      "2(8x)+4(7y)=12",
+      "-2(8x)+4(7y)=12",
+      "(0,0.42857)",
+      "8(0)+7(0.42857)"
     ],
     "steps": [
       {
-        "text": "Type 2(3x+4)=6x+5 into Desmos."
+        "text": "Enter both equations exactly as written: 2(8x)+4(7y)=12 and −2(8x)+4(7y)=12. Desmos finds their intersection point (the solution) at (0, 0.42857)."
       },
       {
-        "text": "Nothing gets plotted — the x terms cancel out and 8 ≠ 5 no matter what x is. When Desmos draws nothing for a one-variable equation, that's your signal: no solution.",
+        "text": "Type 8(0)+7(0.42857) as a new line and Desmos evaluates it to ≈2.99999 — i.e. 3.",
         "image": "assets/screenshots/alg-3.png"
       }
     ]
@@ -73,72 +86,98 @@
   {
     "id": "alg-4",
     "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "What is the largest integer value of x that satisfies −3 < 2x + 1 ≤ 9?",
-    "answer": "4",
+    "subcategory": "Linear functions and interpreting graphs",
+    "question": "The table gives the coordinates of two points on a line in the xy-plane: (k, 13) and (k + 7, −15), where k is a constant. The y-intercept of the line is (k − 5, b), where b is a constant. What is the value of b?",
+    "answer": "33",
     "answerType": "numeric",
     "desmosExpressions": [
-      "2x+1>-3",
-      "2x+1\\le9"
+      {
+        "table": {
+          "x": [
+            "5",
+            "12"
+          ],
+          "y": [
+            "13",
+            "-15"
+          ]
+        }
+      },
+      "y_1\\sim mx_1+n",
+      "(0,n)"
     ],
     "steps": [
       {
-        "text": "Graph 2x+1>-3 and 2x+1<=9 as two separate expressions — Desmos shades each region."
+        "text": "Since the slope is fixed (−28/7 = −4) no matter which k you pick, choose a convenient value like k = 5. Enter a table with x₁ = 5, 12 and y₁ = 13, −15."
       },
       {
-        "text": "The overlap of both shaded regions is −2 < x ≤ 4. The largest integer in that range is 4.",
+        "text": "Add y₁ ~ mx₁+n. Desmos fits m = −4, n = 33. Since x = k−5 = 0 here, the point (0, 33) is exactly the y-intercept — so b = 33 (true for any k).",
         "image": "assets/screenshots/alg-4.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -2,
+      "right": 20,
+      "bottom": -10,
+      "top": 45
+    }
   },
   {
     "id": "alg-5",
     "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "A rectangle's length is 3 more than twice its width. If the perimeter is 36, what is the width?",
-    "answer": "5",
-    "answerType": "numeric",
+    "subcategory": "Systems of linear equations",
+    "question": "3x = 36y − 45. One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?",
+    "answer": "(1/3)x=4y",
+    "answerType": null,
     "desmosExpressions": [
-      "2*(2x+3+x)=36"
+      "3x=36y-45",
+      "(1/3)x=4y"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 15,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Let x be the width, so the length is 2x+3. The perimeter equation becomes 2*(2x+3+x)=36 — type that directly into Desmos."
+        "text": "For a system to have no solution, the two lines must be parallel — same slope, different intercept. Rewrite the given equation: y = x/12 + 1.25 (slope 1/12)."
       },
       {
-        "text": "The vertical line lands at x = 5. The width is 5.",
+        "text": "Only option B, (1/3)x = 4y (i.e. y = x/12), has the same slope 1/12 but a different y-intercept (0, not 1.25) — graphing both in Desmos confirms two parallel lines that never meet.",
         "image": "assets/screenshots/alg-5.png"
       }
+    ],
+    "choices": [
+      "A) x = 4y",
+      "B) (1/3)x = 4y",
+      "C) x = 12y − 15",
+      "D) (1/3)x = 12y − 15"
     ]
   },
   {
     "id": "alg-6",
     "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "Solve for x: 0.25x + 15 = 0.10x + 45",
-    "answer": "200",
+    "subcategory": "Systems of linear equations",
+    "question": "The graph of the equation ax + ky = 6 is a line in the xy-plane, where a and k are constants. If the line contains the points (−2, −6) and (0, −3), what is the value of k?",
+    "answer": "-2",
     "answerType": "numeric",
     "desmosExpressions": [
-      "0.25x+15=0.10x+45"
+      {
+        "table": {
+          "x": [
+            "-2",
+            "0"
+          ],
+          "y": [
+            "-6",
+            "-3"
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b",
+      "ax_1+ky_1\\sim 6"
     ],
-    "bounds": {
-      "left": -20,
-      "right": 220,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Type 0.25x+15=0.10x+45 into Desmos."
+        "text": "Enter a table with the two given points and add y₁ ~ mx₁+b. Desmos fits slope m = 1.5, intercept b = −3 (the line is y = 1.5x − 3)."
       },
       {
-        "text": "The line lands at x = 200.",
+        "text": "Enter ax₁+ky₁ ~ 6 using the same table. Desmos fits a = 3, k = −2 (RMSE = 0) — so k = −2.",
         "image": "assets/screenshots/alg-6.png"
       }
     ]
@@ -147,19 +186,20 @@
     "id": "alg-7",
     "category": "Algebra",
     "subcategory": "Systems of linear equations",
-    "question": "A system is given by 2x + 3y = 14 and 4x − y = 14. What is the value of x + y?",
+    "question": "(3/2)y − (1/4)x = 2/3 − (3/2)y and (1/2)x + 3/2 = py + 9/2. In the given system of equations, p is a constant. If the system has no solution, what is the value of p?",
     "answer": "6",
     "answerType": "numeric",
     "desmosExpressions": [
-      "2x+3y=14",
-      "4x-y=14"
+      "(3/2)y-(1/4)x=2/3-(3/2)y",
+      "(1/2)x+3/2=p*y+9/2",
+      "p=6"
     ],
     "steps": [
       {
-        "text": "Graph both equations as separate expressions."
+        "text": "Simplify each equation for y: the first becomes y = x/12 + 2/9 (slope 1/12); the second becomes y = x/(2p) − 3/p."
       },
       {
-        "text": "The lines intersect at (4, 2). So x + y = 6.",
+        "text": "For no solution, the slopes must match but intercepts differ: 1/(2p) = 1/12 gives p = 6. Graphing both with p = 6 in Desmos shows two parallel lines that never meet.",
         "image": "assets/screenshots/alg-7.png"
       }
     ]
@@ -167,40 +207,64 @@
   {
     "id": "alg-8",
     "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "How many solutions does the system y = 2x + 3 and y = 2x − 5 have?",
-    "answer": "0",
+    "subcategory": "Linear equations and inequalities (one variable)",
+    "question": "Hector used a tool called an auger to remove corn from a storage bin at a constant rate. The bin contained 24,000 bushels of corn when Hector began to use the auger. After 5 hours of using the auger, 19,350 bushels of corn remained in the bin. If the auger continues to remove corn at this rate, what is the total number of hours Hector will have been using the auger when 12,840 bushels of corn remain in the bin?",
+    "answer": "12",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=2x+3",
-      "y=2x-5"
+      "24000-19350",
+      "4650/5",
+      "24000-12840",
+      "11160/930",
+      "y=24000-930x"
     ],
     "steps": [
       {
-        "text": "Graph both lines together."
+        "text": "Find the rate: the bin dropped 24000−19350 = 4650 bushels in 5 hours, so the rate is 4650/5 = 930 bushels per hour."
       },
       {
-        "text": "They're parallel (same slope, different intercepts) — they never cross, so there are 0 solutions.",
+        "text": "From 24000, reaching 12840 means removing 24000−12840 = 11160 bushels, which takes 11160/930 = 12 hours.",
         "image": "assets/screenshots/alg-8.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -2,
+      "right": 30,
+      "bottom": -2000,
+      "top": 26000
+    }
   },
   {
     "id": "alg-9",
     "category": "Algebra",
     "subcategory": "Systems of linear equations",
-    "question": "The system 2x + 4y = 8 and x + 2y = 4 has how many solutions? Type a number, or \"infinite\" if there are infinitely many.",
-    "answer": "infinite",
+    "question": "For line h, the table shows three values of x and their corresponding values of y: (18, 130), (23, 160), (26, 178). Line k is the result of translating line h down 5 units in the xy-plane. What is the x-intercept of line k?",
+    "answer": "(-17/6, 0)",
+    "answerType": null,
     "desmosExpressions": [
-      "2x+4y=8",
-      "x+2y=4"
+      {
+        "table": {
+          "x": [
+            "18",
+            "23",
+            "26"
+          ],
+          "y": [
+            "130",
+            "160",
+            "178"
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b",
+      "y=mx+b-5"
     ],
     "steps": [
       {
-        "text": "Graph both equations."
+        "text": "Enter a table with the three points and add y₁ ~ mx₁+b. Desmos fits m = 6, b = 22 (line h: y = 6x + 22)."
       },
       {
-        "text": "They're the same line in disguise (the first is just the second doubled) — every point on the line is a solution, so there are infinitely many.",
+        "text": "Line k is h shifted down 5: y = 6x + 17. Graph y=mx+b-5 and read its x-intercept: x = −17/6, so the point is (−17/6, 0).",
         "image": "assets/screenshots/alg-9.png"
       }
     ]
@@ -208,129 +272,158 @@
   {
     "id": "alg-10",
     "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "$10,000 is invested in two accounts, one earning 4% annual interest and the other 6%. If the total annual interest earned is $520, how much was invested at 6%?",
-    "answer": "6000",
+    "subcategory": "Linear functions and interpreting graphs",
+    "question": "The table shows two values of x and their corresponding values of y: (−12, −45) and (6, 45). The graph of the linear equation representing this relationship passes through the point (1/4, a). What is the value of a?",
+    "answer": "16.25",
     "answerType": "numeric",
     "desmosExpressions": [
-      "x+y=10000",
-      "0.04x+0.06y=520"
+      {
+        "table": {
+          "x": [
+            "-12",
+            "6"
+          ],
+          "y": [
+            "-45",
+            "45"
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b",
+      "5(1/4)+15"
     ],
-    "bounds": {
-      "left": -2000,
-      "right": 12000,
-      "bottom": -2000,
-      "top": 12000
-    },
     "steps": [
       {
-        "text": "Let x = amount at 4% and y = amount at 6%. Translate the two facts into equations: x+y=10000 and 0.04x+0.06y=520."
+        "text": "Enter a table with the two points and add y₁ ~ mx₁+b. Desmos fits m = 5, b = 15 (the line is y = 5x + 15)."
       },
       {
-        "text": "The lines intersect at (4000, 6000) — $6,000 was invested at 6%.",
+        "text": "At x = 1/4: a = 5(1/4) + 15 = 16.25.",
         "image": "assets/screenshots/alg-10.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -5,
+      "right": 5,
+      "bottom": -5,
+      "top": 20
+    }
   },
   {
     "id": "alg-11",
     "category": "Algebra",
     "subcategory": "Systems of linear equations",
-    "question": "A boat travels 60 miles downstream in 3 hours and returns upstream in 5 hours. What is the boat's speed in still water, in mph?",
-    "answer": "16",
+    "question": "ax + by = 72 and 6x + 2by = 56. In the given system of equations, a and b are constants. The graphs of these equations in the xy-plane intersect at the point (4, y). What is the value of a?",
+    "answer": "14",
     "answerType": "numeric",
     "desmosExpressions": [
-      "x+y=20",
-      "x-y=12"
+      "b=4",
+      "y=(56-6\\cdot4)/(2b)",
+      "a=(72-b\\cdot y)/4"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 25,
-      "bottom": -5,
-      "top": 25
-    },
     "steps": [
       {
-        "text": "Let x = boat speed and y = current speed. Downstream speed is 60/3 = 20 mph, upstream is 60/5 = 12 mph: x+y=20 and x-y=12."
+        "text": "At x=4, both equations share the same y. From 6x+2by=56 at x=4: 24+2by=56, so by=16 (true for any b, once y is chosen to match)."
       },
       {
-        "text": "The lines intersect at (16, 4) — the boat's speed in still water is 16 mph.",
+        "text": "Substitute by=16 into ax+by=72 at x=4: 4a+16=72, so a=14 — independent of which b you pick (try b=4, y=4 in Desmos to confirm).",
         "image": "assets/screenshots/alg-11.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -20,
+      "right": 20,
+      "bottom": -20,
+      "top": 40
+    }
   },
   {
     "id": "alg-12",
     "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "Solve the system: (1/2)x + y = 7 and x − y = 2. What is the value of x?",
-    "answer": "6",
-    "answerType": "numeric",
+    "subcategory": "Linear functions and interpreting graphs",
+    "question": "For a linear relationship between x and y, the table gives three values of x and their corresponding values of y: (−34, t), (−17, t+23), (0, t+46), where t is a constant. Which equation represents this relationship?",
+    "answer": "y=(23/17)x+t+46",
+    "answerType": null,
     "desmosExpressions": [
-      "\\frac{1}{2}x+y=7",
-      "x-y=2"
+      {
+        "table": {
+          "x": [
+            "-34",
+            "-17",
+            "0"
+          ],
+          "y": [
+            "0",
+            "23",
+            "46"
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b"
     ],
     "steps": [
       {
-        "text": "Graph (1/2)x+y=7 and x-y=2 exactly as given."
+        "text": "The slope is fixed regardless of t: (t+23−t)/(−17−(−34)) = 23/17. Test with t=0 in a table (0, 23, 46) — Desmos fits m = 23/17, b = 46."
       },
       {
-        "text": "The lines intersect at (6, 4). So x = 6.",
+        "text": "Since b was 46 when t=0, in general the y-intercept is t + 46, so the equation is y = (23/17)x + t + 46.",
         "image": "assets/screenshots/alg-12.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -40,
+      "right": 5,
+      "bottom": -5,
+      "top": 50
+    }
   },
   {
     "id": "alg-13",
     "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "Gym Plan A costs $30 plus $4 per class. Gym Plan B costs $10 plus $8 per class. After how many classes do the two plans cost the same?",
-    "answer": "5",
+    "subcategory": "Linear functions and interpreting graphs",
+    "question": "(2/5)x + (7/5)y = 2/7 and gx + ky = 5/2. In the given system of equations, g and k are constants. The system has infinitely many solutions. What is the value of g/k?",
+    "answer": 0.2857,
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=30+4x",
-      "y=10+8x"
+      "c=(5/2)/(2/7)",
+      "g=(2/5)*c",
+      "k=(7/5)*c",
+      "g/k"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 15,
-      "bottom": -5,
-      "top": 80
-    },
     "steps": [
       {
-        "text": "Model each plan as a line: y=30+4x for Plan A and y=10+8x for Plan B."
+        "text": "For infinitely many solutions, the second equation must be a scalar multiple of the first: the scale factor is c = (5/2)/(2/7) = 8.75."
       },
       {
-        "text": "The lines cross at (5, 50) — the plans cost the same after 5 classes.",
+        "text": "g = (2/5)(8.75) = 3.5 and k = (7/5)(8.75) = 12.25, so g/k = 3.5/12.25 = 2/7 ≈ 0.2857 (note g/k equals the ratio of the original coefficients, (2/5)/(7/5), directly).",
         "image": "assets/screenshots/alg-13.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -10,
+      "right": 10,
+      "bottom": -10,
+      "top": 10
+    }
   },
   {
     "id": "alg-14",
     "category": "Algebra",
     "subcategory": "Linear functions and interpreting graphs",
-    "question": "If f(x) = 3x − 7, what is f(f(2))?",
-    "answer": "-10",
-    "answerType": "numeric",
+    "question": "7x + 6y = 5 and 28x + 24y = 20. For each real number r, which of the following points lies on the graph of each equation in the xy-plane for the given system?",
+    "answer": "(-6r/7+5/7, r)",
+    "answerType": null,
     "desmosExpressions": [
-      "y=3x-7",
-      "(2,-1)",
-      "(-1,-10)"
+      "7x+6y=5",
+      "28x+24y=20",
+      "n=3.9",
+      "(-6/7*n+5/7, n)"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 8,
-      "bottom": -15,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Graph y=3x-7. Click the curve at x=2 to find f(2) = −1."
+        "text": "Notice 28x+24y=20 is just 4×(7x+6y=5) — the same line, so the system has infinitely many solutions (any point on the line works)."
       },
       {
-        "text": "Now click the curve at x=−1 (the output you just found): f(−1) = −10. So f(f(2)) = −10.",
+        "text": "Solve 7x+6y=5 for x in terms of y: x = −6y/7 + 5/7. Letting y = r gives the point (−6r/7+5/7, r) — try n = 3.9 in Desmos (using n in place of r to avoid Desmos's special polar-radius meaning of r) and confirm it satisfies both equations.",
         "image": "assets/screenshots/alg-14.png"
       }
     ]
@@ -338,712 +431,69 @@
   {
     "id": "alg-15",
     "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A line passes through (2, 11) and (7, 31). What is y when x = 10?",
-    "answer": "43",
+    "subcategory": "Systems of linear equations",
+    "question": "0.10x + 0.20y = 0.17(x + y). The equation gives a volume x, in gallons, of a 10% solution that could be mixed with a volume y, in gallons, of a 20% solution to produce a 17% solution. According to this equation, what volume, in gallons, of the 20% solution could be mixed with 90.0 gallons of the 10% solution to produce a 17% solution? (Assume that the volume of the mixture is the sum of the volumes of the two solutions before they were mixed.)",
+    "answer": "210",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=4x+3",
-      "(2,11)",
-      "(7,31)"
+      "0.10(90)+0.20y_1\\sim0.17(90+y_1)"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -5,
-      "top": 50
-    },
     "steps": [
       {
-        "text": "Plot both points, then fit a line with a table + regression (y₁ ~ mx₁+b): Desmos reports y = 4x + 3."
+        "text": "Enter the equation with x = 90 as a regression in y₁: 0.10(90)+0.20y₁ ~ 0.17(90+y₁)."
       },
       {
-        "text": "Trace y=4x+3 to x = 10: y = 43.",
+        "text": "Desmos solves it instantly under REGRESSION PARAMETERS: y₁ = 210 (RMSE = 0).",
         "image": "assets/screenshots/alg-15.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-16",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "Line A passes through (0, 4) and (5, 19). Line B is y = 2x + 4. What is the positive difference between their slopes?",
-    "answer": "1",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=3x+4",
-      "y=2x+4",
-      "(0,4)",
-      "(5,19)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 8,
-      "bottom": -2,
-      "top": 25
-    },
-    "steps": [
-      {
-        "text": "Fit Line A through its two points (regression gives y=3x+4), and graph Line B, y=2x+4, alongside it."
-      },
-      {
-        "text": "Line A has slope 3, Line B has slope 2. The positive difference is 1.",
-        "image": "assets/screenshots/alg-16.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-17",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "Equipment valued at $25,000 depreciates $1,800 per year. After how many years is it worth $7,000?",
-    "answer": "10",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=25000-1800x",
-      "y=7000"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 15,
-      "bottom": -2000,
-      "top": 27000
-    },
-    "steps": [
-      {
-        "text": "Model the value as y=25000-1800x and graph the target value as a horizontal line, y=7000."
-      },
-      {
-        "text": "The lines cross at x = 10 — the equipment is worth $7,000 after 10 years.",
-        "image": "assets/screenshots/alg-17.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-18",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A line parallel to y = −3x + 5 passes through (2, 1). What is y when x = 6?",
-    "answer": "-11",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=-3x+7",
-      "(2,1)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 10,
-      "bottom": -15,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Parallel lines share a slope, so this line is y=-3x+b. Since it passes through (2,1), plug in to find b=7: y=-3x+7."
-      },
-      {
-        "text": "Trace the line to x = 6: y = −11.",
-        "image": "assets/screenshots/alg-18.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-19",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "What is the slope of a line perpendicular to y = (1/4)x + 2?",
-    "answer": "-4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=\\frac{1}{4}x+2",
-      "y=-4x+2"
-    ],
-    "steps": [
-      {
-        "text": "Graph y=(1/4)x+2, then graph a line with slope -4 alongside it, like y=-4x+2."
-      },
-      {
-        "text": "The two lines meet at a right angle — perpendicular slopes are negative reciprocals, so the answer is −4.",
-        "image": "assets/screenshots/alg-19.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-20",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "For y = −2x + 9, what is the sum of the x-intercept and the y-intercept?",
-    "answer": "13.5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=-2x+9"
-    ],
-    "steps": [
-      {
-        "text": "Graph y=-2x+9 and click where it crosses each axis."
-      },
-      {
-        "text": "The x-intercept is 4.5 and the y-intercept is 9. Their sum is 13.5.",
-        "image": "assets/screenshots/alg-20.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-21",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A tank starts with 40 gallons and drains at 5 gallons per minute. After how many minutes is it empty?",
-    "answer": "8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=40-5x",
-      "y=0"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -5,
-      "top": 45
-    },
-    "steps": [
-      {
-        "text": "Model the tank's volume as y=40-5x and graph y=0 alongside it."
-      },
-      {
-        "text": "The lines cross at x = 8 — the tank is empty after 8 minutes.",
-        "image": "assets/screenshots/alg-21.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-22",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A linear function's table shows: x = 0, y = 5; x = 4, y = 17. What is y when x = 10?",
-    "answer": "35",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=3x+5",
-      "(0,5)",
-      "(4,17)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -2,
-      "top": 40
-    },
-    "steps": [
-      {
-        "text": "Plot the two points, then fit a line with a table + regression: Desmos reports y = 3x + 5."
-      },
-      {
-        "text": "Trace y=3x+5 to x = 10: y = 35.",
-        "image": "assets/screenshots/alg-22.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-23",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "Student tickets cost $6 and adult tickets cost $9. If 200 tickets were sold for a total of $1,500, how many student tickets were sold?",
-    "answer": "100",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x+y=200",
-      "6x+9y=1500"
-    ],
-    "bounds": {
-      "left": -20,
-      "right": 220,
-      "bottom": -20,
-      "top": 220
-    },
-    "steps": [
-      {
-        "text": "Let x = student tickets and y = adult tickets: x+y=200 and 6x+9y=1500."
-      },
-      {
-        "text": "The lines intersect at (100, 100) — 100 student tickets were sold.",
-        "image": "assets/screenshots/alg-23.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-24",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "If g(x) = −5x + 2, what is g(−3)?",
-    "answer": "17",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=-5x+2",
-      "(-3,17)"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 5,
-      "bottom": -5,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Graph y=-5x+2."
-      },
-      {
-        "text": "Click the curve at x = −3 — Desmos labels the point (−3, 17). So g(−3) = 17.",
-        "image": "assets/screenshots/alg-24.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-25",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A phone plan costs $35 for 100 minutes and $75 for 300 minutes, billed as a flat fee plus a per-minute rate. What is the per-minute rate, in cents?",
-    "answer": "20",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=15+0.2x",
-      "(100,35)",
-      "(300,75)"
-    ],
-    "bounds": {
-      "left": -20,
-      "right": 320,
-      "bottom": -5,
-      "top": 90
-    },
-    "steps": [
-      {
-        "text": "Plot the two (minutes, cost) points, then fit a line: Desmos reports y=0.2x+15 — a $15 flat fee plus $0.20 per minute."
-      },
-      {
-        "text": "$0.20 per minute is 20 cents per minute.",
-        "image": "assets/screenshots/alg-25.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-26",
-    "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "In the equation (9x + 15)/3 − k/7 = m(x − 5), k and m are constants. If the equation has infinitely many solutions, what is the value of m?",
-    "answer": "3",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=3x+5",
-      "m=3",
-      "y=m(x-5)"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -20,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "The left side simplifies to y=3x+5 (the k/7 term just shifts it vertically, which doesn't affect slope). Graph that."
-      },
-      {
-        "text": "For infinitely many solutions, the right side must have the same slope. Set m=3 and graph y=m(x-5) — the lines are now parallel with matching slope, confirming m = 3 (k would need to be set separately to make them fully overlap).",
-        "image": "assets/screenshots/alg-26.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-27",
-    "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "For what value of k does the system 3x + ky = 12 and 6x + 8y = 20 have no solution?",
-    "answer": "4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "k=4",
-      "3x+ky=12",
-      "6x+8y=20"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -5,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Graph both equations with k as a slider."
-      },
-      {
-        "text": "Set k = 4 — the two lines become parallel (same slope, different intercepts), meaning no solution exists.",
-        "image": "assets/screenshots/alg-27.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-28",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A landscaper charges a $150 flat fee for the first three hours of work, plus an hourly rate for each additional hour. The total cost for 7 hours of work is $310. What is the hourly rate, in dollars?",
-    "answer": "40",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=150+r*(x-3)",
-      "r=40",
-      "(7,310)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 10,
-      "bottom": -10,
-      "top": 350
-    },
-    "steps": [
-      {
-        "text": "Model the cost as y=150+r*(x-3), with r as a slider, and plot the known point (7, 310)."
-      },
-      {
-        "text": "Drag r until the line passes through (7, 310) — that happens at r = 40.",
-        "image": "assets/screenshots/alg-28.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-29",
-    "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "A rental company charges a flat fee plus a per-day rate. Renting for 4 days costs $180. Renting for 9 days costs $355. What is the flat fee, in dollars?",
-    "answer": "40",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(4,180)",
-      "(9,355)",
-      "y=35x+40"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 12,
-      "bottom": -10,
-      "top": 400
-    },
-    "steps": [
-      {
-        "text": "Plot the two (days, cost) points, then fit a line: Desmos reports y=35x+40."
-      },
-      {
-        "text": "The y-intercept, 40, is the flat fee — the cost before any daily rate is applied.",
-        "image": "assets/screenshots/alg-29.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-30",
-    "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "An elevator has a maximum weight capacity of 2,000 pounds. The operator weighs 180 pounds, and each box weighs 85 pounds. What is the maximum number of boxes that can be loaded?",
-    "answer": "21",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=180+85x",
-      "y=2000"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 25,
-      "bottom": -100,
-      "top": 2200
-    },
-    "steps": [
-      {
-        "text": "Graph y=180+85x (total weight) and the horizontal line y=2000 (the limit)."
-      },
-      {
-        "text": "They cross just past x = 21.4 — since boxes are whole, the maximum is 21 boxes.",
-        "image": "assets/screenshots/alg-30.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-31",
-    "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "For the inequality −4 ≤ 3x − 5 < 13, what is the sum of the greatest and least integer values of x that satisfy it?",
-    "answer": "6",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "3x-5>=-4",
-      "3x-5<13"
-    ],
-    "steps": [
-      {
-        "text": "Graph 3x-5>=-4 and 3x-5<13 as two shaded regions."
-      },
-      {
-        "text": "The overlap is 1/3 ≤ x < 6. The least integer in that range is 1 and the greatest is 5. Their sum is 6.",
-        "image": "assets/screenshots/alg-31.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-32",
-    "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "What is the smallest integer x that satisfies −3x + 7 ≤ 22?",
-    "answer": "-5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=-3x+7",
-      "y=22"
-    ],
-    "steps": [
-      {
-        "text": "Graph y=-3x+7 and the horizontal line y=22."
-      },
-      {
-        "text": "The line is at or below 22 for x ≥ −5 (dividing by a negative number flips the inequality). The smallest integer is −5.",
-        "image": "assets/screenshots/alg-32.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-33",
-    "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "The solution to the system 12x + 5y = 70 and 12x − 5y = 50 is (x, y). What is the value of x + y?",
-    "answer": "7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "12x+5y=70",
-      "12x-5y=50"
-    ],
-    "steps": [
-      {
-        "text": "Graph both equations."
-      },
-      {
-        "text": "They intersect at (5, 2). So x + y = 7.",
-        "image": "assets/screenshots/alg-33.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-34",
-    "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "For what value of k does the system 4x − 6y = 10 and 6x − 9y = k have infinitely many solutions?",
-    "answer": "15",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "k=15",
-      "4x-6y=10",
-      "6x-9y=k"
-    ],
-    "steps": [
-      {
-        "text": "Graph both equations with k as a slider."
-      },
-      {
-        "text": "Set k = 15 — the second line lands exactly on top of the first, meaning every point on the line is a solution.",
-        "image": "assets/screenshots/alg-34.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-35",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "The function h is defined by h(x) = ax + b. The table shows h(2) = 11 and h(5) = 23. What is the value of a + b?",
-    "answer": "7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=4x+3",
-      "(2,11)",
-      "(5,23)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 8,
-      "bottom": -2,
-      "top": 30
-    },
-    "steps": [
-      {
-        "text": "Plot the two points, then fit a line with a table + regression: Desmos reports y = 4x + 3, so a = 4 and b = 3."
-      },
-      {
-        "text": "a + b = 4 + 3 = 7.",
-        "image": "assets/screenshots/alg-35.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-36",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "Company A's profit is modeled by P(x) = 45x − 1200. Company B's profit is modeled by P(x) = 30x − 300. For what value of x are the two companies' profits equal?",
-    "answer": "60",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=45x-1200",
-      "y=30x-300"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 80,
-      "bottom": -1500,
-      "top": 1500
-    },
-    "steps": [
-      {
-        "text": "Graph both profit models."
-      },
-      {
-        "text": "The lines cross at x = 60.",
-        "image": "assets/screenshots/alg-36.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-37",
-    "category": "Algebra",
-    "subcategory": "Linear equations and inequalities (one variable)",
-    "question": "What is the largest integer value of x that satisfies both 2x + 3 > 11 and −x + 10 > 3?",
-    "answer": "6",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "2x+3>11",
-      "-x+10>3"
-    ],
-    "steps": [
-      {
-        "text": "Graph both inequalities as shaded regions."
-      },
-      {
-        "text": "The overlap is 4 < x < 7. The largest integer in that range is 6.",
-        "image": "assets/screenshots/alg-37.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-38",
-    "category": "Algebra",
-    "subcategory": "Systems of linear equations",
-    "question": "A hardware store mixes red and white paint to create pink paint. Mixing 3 gallons of red with 7 gallons of white costs $38. Mixing 5 gallons of red with 2 gallons of white costs $44. What is the cost per gallon of red paint, in dollars?",
-    "answer": "8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "3x+7y=38",
-      "5x+2y=44"
-    ],
-    "steps": [
-      {
-        "text": "Let x = cost per gallon of red and y = cost per gallon of white: 3x+7y=38 and 5x+2y=44."
-      },
-      {
-        "text": "The lines intersect at (8, 2) — red paint costs $8 per gallon.",
-        "image": "assets/screenshots/alg-38.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-39",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "The graph of 5x + 3y = 45 is a line. What is the sum of its x-intercept and y-intercept?",
-    "answer": "24",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "5x+3y=45"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -2,
-      "top": 18
-    },
-    "steps": [
-      {
-        "text": "Graph 5x+3y=45 and click where it crosses each axis."
-      },
-      {
-        "text": "The x-intercept is 9 and the y-intercept is 15. Their sum is 24.",
-        "image": "assets/screenshots/alg-39.png"
-      }
-    ]
-  },
-  {
-    "id": "alg-40",
-    "category": "Algebra",
-    "subcategory": "Linear functions and interpreting graphs",
-    "question": "A line ℓ passes through (2, 7) and (6, 15). A second line is perpendicular to ℓ and passes through (0, 8). What is the value of y on the second line when x = 10?",
-    "answer": "3",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=2x+3",
-      "(2,7)",
-      "(6,15)",
-      "y=-0.5x+8",
-      "(0,8)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -5,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Fit line ℓ through its two points: Desmos gives y=2x+3, so its slope is 2. A perpendicular slope is the negative reciprocal, −0.5."
-      },
-      {
-        "text": "Graph y=-0.5x+8 (through (0,8)) and trace it to x=10: y = 3.",
-        "image": "assets/screenshots/alg-40.png"
       }
     ]
   },
   {
     "id": "adv-1",
     "category": "Advanced Math",
-    "subcategory": "Quadratic equations and functions",
-    "question": "For what positive value of k does x² + kx + 9 = 0 have exactly one real solution?",
-    "answer": "6",
+    "subcategory": "Exponential functions",
+    "question": "y = 9(a/7)ˣ⁺ᶜ − b. How many times does the graph of the given equation in the xy-plane cross the x-axis, where a, b, and c are positive constants such that a > 7 and b > c?",
+    "answer": "1",
     "answerType": "numeric",
     "desmosExpressions": [
-      "k=6",
-      "y=x^2+kx+9"
+      "a=8",
+      "c=2",
+      "b=3",
+      "y=9(a/7)^{x+c}-b"
     ],
     "steps": [
       {
-        "text": "Type k=6 (Desmos offers a slider) and y=x^2+kx+9. Drag the slider for k."
+        "text": "You don't need exact values of a, b, and c to answer this — just pick any positive numbers that satisfy the given restrictions (a > 7 so the base a/7 > 1, and b > c > 0), and set them as sliders in Desmos. The answer will come out the same no matter which valid values you choose."
       },
       {
-        "text": "At k = 6, the parabola just touches the x-axis once (a perfect square) — that's the one-solution case.",
+        "text": "Try a=8, c=2, b=3: since a/7 > 1, the exponential term is always positive and strictly increasing, approaching 0 (never reaching it) as x decreases and growing without bound as x increases. Because b > 0, the graph starts below the x-axis and rises to cross it exactly once.",
         "image": "assets/screenshots/adv-1.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -15,
+      "right": 5,
+      "bottom": -5,
+      "top": 15
+    }
   },
   {
     "id": "adv-2",
     "category": "Advanced Math",
     "subcategory": "Quadratic equations and functions",
-    "question": "A ball's height is modeled by h(t) = −16t² + 48t + 4. What is the maximum height reached?",
-    "answer": "40",
+    "question": "The product of two positive integers is 462. If the first integer is 5 greater than twice the second integer, what is the smaller of the two integers?",
+    "answer": "14",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=-16x^2+48x+4"
+      "x_1=2y_1+5",
+      "x_1y_1\\sim462"
     ],
-    "bounds": {
-      "left": -1,
-      "right": 5,
-      "bottom": -10,
-      "top": 50
-    },
     "steps": [
       {
-        "text": "Type y=-16x^2+48x+4 into Desmos (using x in place of t)."
+        "text": "Let y₁ be the smaller integer and x₁ the larger. Define x₁ = 2y₁+5, then enter the product as a regression: x₁y₁ ~ 462."
       },
       {
-        "text": "Click the peak of the parabola — Desmos labels it (1.5, 40). The maximum height is 40.",
+        "text": "Desmos solves it instantly under REGRESSION PARAMETERS: y₁ = 14 (RMSE = 0). Then x₁ = 2(14)+5 = 33, and 14×33 = 462 checks out — the smaller integer is 14.",
         "image": "assets/screenshots/adv-2.png"
       }
     ]
@@ -1052,111 +502,127 @@
     "id": "adv-3",
     "category": "Advanced Math",
     "subcategory": "Quadratic equations and functions",
-    "question": "For x² − 7x + 10 = 0, what is the sum of the two roots?",
-    "answer": "7",
+    "question": "h(x) = 2(x−4)² − 32. The quadratic function h is defined as shown. In the xy-plane, the graph of y = h(x) intersects the x-axis at the points (0,0) and (t,0), where t is a constant. What is the value of t?",
+    "answer": "8",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=x^2-7x+10"
+      "y=2(x-4)^2-32"
     ],
     "steps": [
       {
-        "text": "Type y=x^2-7x+10 into Desmos and find where it crosses the x-axis."
+        "text": "Graph y = 2(x−4)²−32 and trace the x-intercepts."
       },
       {
-        "text": "The roots are x = 2 and x = 5. Their sum is 7.",
+        "text": "The graph crosses the x-axis at (0,0) and (8,0), so t = 8.",
         "image": "assets/screenshots/adv-3.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -3,
+      "right": 11,
+      "bottom": -35,
+      "top": 10
+    }
   },
   {
     "id": "adv-4",
     "category": "Advanced Math",
-    "subcategory": "Quadratic equations and functions",
-    "question": "For what values of x is x² − x − 6 < 0? What is the largest integer in the solution set?",
-    "answer": "2",
+    "subcategory": "Nonlinear functions and their graphs",
+    "question": "2|4−x| + 3|4−x| = 25. What is the positive solution to the given equation?",
+    "answer": "9",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=x^2-x-6"
+      "2\\left|4-x\\right|+3\\left|4-x\\right|=25"
     ],
     "steps": [
       {
-        "text": "Type y=x^2-x-6 into Desmos and find its two roots."
+        "text": "Combine like terms: 2|4−x| + 3|4−x| = 5|4−x| = 25, so |4−x| = 5."
       },
       {
-        "text": "The parabola dips below the x-axis between x = −2 and x = 3. The largest integer strictly inside that range is 2.",
+        "text": "Graph 2|4−x|+3|4−x|=25 directly — it shows two vertical solution lines, at x=−1 and x=9. The positive solution is 9.",
         "image": "assets/screenshots/adv-4.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -5,
+      "right": 15,
+      "bottom": -2,
+      "top": 30
+    }
   },
   {
     "id": "adv-5",
     "category": "Advanced Math",
     "subcategory": "Quadratic equations and functions",
-    "question": "A company's profit is P(x) = −2(x − 25)² + 800, where x is the price. At what price is profit maximized?",
-    "answer": "25",
+    "question": "x² − 2x − 9 = 0. One solution to the given equation can be written as 1 + √k, where k is a constant. What is the value of k?",
+    "answer": "10",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=-2(x-25)^2+800"
+      "x^2-2x-9",
+      "1+\\sqrt{k}=x",
+      "k=10"
     ],
-    "bounds": {
-      "left": 0,
-      "right": 50,
-      "bottom": -100,
-      "top": 900
-    },
     "steps": [
       {
-        "text": "Type y=-2(x-25)^2+800 into Desmos."
+        "text": "Graph x²−2x−9 (as an implicit equation, or set it equal to 0) alongside 1+√k = x, with k as a slider. Once graphed, just guess and check each answer choice for k."
       },
       {
-        "text": "Click the peak of the parabola — it's at (25, 800). Profit is maximized at a price of 25.",
+        "text": "Only k=10 makes the line 1+√k=x pass through one of the equation's solution points (x ≈ 4.162). By the quadratic formula this matches x = 1±√10 exactly, so k = 10.",
         "image": "assets/screenshots/adv-5.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -6,
+      "right": 8,
+      "bottom": -10,
+      "top": 10
+    }
   },
   {
     "id": "adv-6",
     "category": "Advanced Math",
     "subcategory": "Quadratic equations and functions",
-    "question": "How many real solutions does 2x² + 3x + 5 = 0 have?",
-    "answer": "0",
+    "question": "In the xy-plane, a line with equation 2y = 4.5 intersects a parabola at exactly one point. If the parabola has equation y = −4x² + bx, where b is a positive constant, what is the value of b?",
+    "answer": "6",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=2x^2+3x+5"
+      "2y=4.5",
+      "y=-4x^2+bx",
+      "b=6"
     ],
     "steps": [
       {
-        "text": "Type y=2x^2+3x+5 into Desmos."
+        "text": "The line simplifies to y = 2.25. Setting the parabola equal to it gives −4x²+bx = 2.25, or 4x²−bx+2.25 = 0. For exactly one intersection point, the discriminant must be 0."
       },
       {
-        "text": "The parabola never touches the x-axis — it has 0 real solutions.",
+        "text": "b² − 4(4)(2.25) = 0 → b² = 36 → b = 6 (positive). Try b=6 as a slider in Desmos and confirm the line is tangent to the parabola.",
         "image": "assets/screenshots/adv-6.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -3,
+      "right": 3,
+      "bottom": -2,
+      "top": 6
+    }
   },
   {
     "id": "adv-7",
     "category": "Advanced Math",
-    "subcategory": "Exponential functions",
-    "question": "Solve for x: 4^(2x − 1) = 64",
-    "answer": "2",
+    "subcategory": "Polynomial expressions and equations",
+    "question": "(ax+3)(5x²−bx+4) = 20x³−9x²−2x+12. The equation above is true for all x, where a and b are constants. What is the value of ab?",
+    "answer": "24",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=4^{2x-1}",
-      "y=64"
+      "x_1=[1...10]",
+      "(ax_1+3)(5x_1^2-bx_1+4)\\sim20x_1^3-9x_1^2-2x_1+12"
     ],
-    "bounds": {
-      "left": -1,
-      "right": 4,
-      "bottom": -10,
-      "top": 80
-    },
     "steps": [
       {
-        "text": "Graph y=4^(2x-1) and the horizontal line y=64. Since the exponent has more than one term, group it in braces when typing: 4^{2x-1}."
+        "text": "The key phrase is \"true for all x\" — that means the equation holds no matter what x-values you plug in. So define x₁ = [1...10] (any ten sample values) and regress both sides directly: (ax₁+3)(5x₁²−bx₁+4) ~ 20x₁³−9x₁²−2x₁+12."
       },
       {
-        "text": "They intersect at x = 2.",
+        "text": "Desmos fits a = 4, b = 6 (RMSE ≈ 0), so ab = 4×6 = 24.",
         "image": "assets/screenshots/adv-7.png"
       }
     ]
@@ -1164,52 +630,49 @@
   {
     "id": "adv-8",
     "category": "Advanced Math",
-    "subcategory": "Exponential functions",
-    "question": "A bacteria culture doubles every 4 hours, starting at 50. After how many hours does the population equal 1,600?",
-    "answer": "20",
-    "answerType": "numeric",
+    "subcategory": "Polynomial expressions and equations",
+    "question": "Which of the following expressions is(are) a factor of 3x² + 20x − 63? I. x − 9   II. 3x − 7",
+    "answer": "II only",
+    "answerType": null,
     "desmosExpressions": [
-      "y=50*2^{x/4}",
-      "y=1600"
+      "3x^2+20x-63",
+      "x-9",
+      "3x-7"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 24,
-      "bottom": -100,
-      "top": 1800
-    },
     "steps": [
       {
-        "text": "Graph y=50*2^(x/4) and the horizontal line y=1600. Group the exponent x/4 in braces: 2^{x/4}."
+        "text": "An expression is a valid factor exactly when its own x-intercept lines up with an x-intercept of the parabola — graph all three and compare where each line crosses the x-axis."
       },
       {
-        "text": "They intersect at x = 20 hours.",
+        "text": "3x−7 crosses zero at x≈2.333, and so does the parabola (they meet right at the x-axis, at (2.333, 0)) — so 3x−7 is a factor. x−9 crosses at x=9, but the parabola does not — so x−9 is not a factor. The answer is II only.",
         "image": "assets/screenshots/adv-8.png"
       }
-    ]
+    ],
+    "bounds": {
+      "left": -18,
+      "right": 10,
+      "bottom": -10,
+      "top": 15
+    }
   },
   {
     "id": "adv-9",
     "category": "Advanced Math",
     "subcategory": "Exponential functions",
-    "question": "$2,000 is invested at 5% annual compound interest: A(t) = 2000(1.05)^t. What is A(10), to the nearest dollar?",
-    "answer": "3258",
+    "question": "√(x⁵) / ∛(x⁴) = xᵃ/ᵇ for all positive values of x, what is the value of a/b?",
+    "answer": 1.1667,
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=2000*1.05^x"
+      "x_1=[1...10]",
+      "(\\sqrt{x_1^5})/\\sqrt[3]{x_1^4}\\sim x_1^{(\\frac{a}{b})}",
+      "\\frac{a}{b}"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -100,
-      "top": 3500
-    },
     "steps": [
       {
-        "text": "Type y=2000*1.05^x into Desmos."
+        "text": "Rewrite using fractional exponents: √(x⁵)=x⁵/² and ∛(x⁴)=x⁴/³, so the left side is x⁵/²⁻⁴/³."
       },
       {
-        "text": "Click the curve at x = 10 — Desmos labels the point (10, 3257.79). Rounded, A(10) ≈ 3258.",
+        "text": "To confirm in Desmos, set x₁=[1...10] and regress (√(x₁⁵))/∛(x₁⁴) ~ x₁ᵃ/ᵇ. Desmos fits a/b ≈ 1.1667 — exactly 5/2 − 4/3 = 7/6 ≈ 1.167.",
         "image": "assets/screenshots/adv-9.png"
       }
     ]
@@ -1217,52 +680,50 @@
   {
     "id": "adv-10",
     "category": "Advanced Math",
-    "subcategory": "Exponential functions",
-    "question": "A drug amount decays by 20% each hour: A(t) = 300(0.8)^t. After how many whole hours does less than 100 mg remain?",
-    "answer": "5",
-    "answerType": "numeric",
+    "subcategory": "Rational expressions and equations",
+    "question": "(2w²+c)/√(w²+c) = w²/√(w²+c) + 12. In the equation above, c is a positive constant such that c < 144. Which of the following is one possible value for w?",
+    "answer": "sqrt(144-c)",
+    "answerType": null,
     "desmosExpressions": [
-      "y=300*0.8^x",
-      "y=100"
+      "c=56",
+      "(2w^2+c)/\\sqrt{w^2+c}\\sim w^2/\\sqrt{w^2+c}+12",
+      "\\sqrt{144-c}"
     ],
-    "bounds": {
-      "left": -1,
-      "right": 15,
-      "bottom": -20,
-      "top": 350
-    },
     "steps": [
       {
-        "text": "Graph y=300*0.8^x and the horizontal line y=100."
+        "text": "Subtract w²/√(w²+c) from both sides: (2w²+c−w²)/√(w²+c) = 12, which simplifies to (w²+c)/√(w²+c) = √(w²+c) = 12, so w²+c = 144."
       },
       {
-        "text": "The curve dips below 100 between t = 4 and t = 5. The first whole hour where less than 100 mg remains is t = 5.",
+        "text": "To confirm in Desmos: set c=56 (any value < 144 works) and regress the original equation directly for w. Desmos fits w=9.38083 (RMSE=0) — exactly √(144−56)=√88, matching choice C, w=√(144−c).",
         "image": "assets/screenshots/adv-10.png"
       }
+    ],
+    "choices": [
+      "A) √(12−c)",
+      "B) √(144+c)",
+      "C) √(144−c)",
+      "D) 144−c"
     ]
   },
   {
     "id": "adv-11",
     "category": "Advanced Math",
     "subcategory": "Exponential functions",
-    "question": "For y = 2^(x + 1) + 3, what is the y-intercept?",
-    "answer": "5",
+    "question": "Function f is defined by f(x) = -aˣ + b, where a and b are constants. In the xy-plane, the graph of y = f(x) - 12 has a y-intercept at (0, -75/7). The product of a and b is 320/7. What is the value of a?",
+    "answer": "20",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=2^{x+1}+3"
+      "(-a^x+b)-12\\left\\{ab=\\frac{320}{7}\\right\\}",
+      "ab\\sim\\frac{320}{7}",
+      "a=20",
+      "(0,-75/7)"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 5,
-      "bottom": -2,
-      "top": 15
-    },
     "steps": [
       {
-        "text": "Type y=2^(x+1)+3 into Desmos, grouping the exponent in braces: 2^{x+1}+3."
+        "text": "Find b using the y-intercept: at x=0, y = f(0)-12 = -a⁰+b-12 = -1+b-12 = b-13. Setting this equal to -75/7 gives b = -75/7 + 13 = 16/7."
       },
       {
-        "text": "Click where the curve crosses the y-axis — Desmos labels it (0, 5). The y-intercept is 5.",
+        "text": "Since ab = 320/7 and b = 16/7, a = (320/7) / (16/7) = 320/16 = 20. In Desmos, set the constraint ab=320/7 as a regression alongside the y-intercept point, then use a slider for a (this equation isn’t a clean direct regression because a is both a base and a factor) — dragging to a=20 drives the regression to b=2.28571=16/7 with RMSE=0, confirming a=20.",
         "image": "assets/screenshots/adv-11.png"
       }
     ]
@@ -1270,78 +731,89 @@
   {
     "id": "adv-12",
     "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "What is the sum of all real roots of x³ − 3x² − 4x + 12 = 0?",
-    "answer": "3",
-    "answerType": "numeric",
+    "subcategory": "Equivalent expressions",
+    "question": "The table below shows three values of x and their corresponding values of g(x), where g(x) = f(x)/(x+3) and f is a linear function: (-27, 3), (-9, 0), (21, 5). What is the y-intercept of the graph of y = f(x) in the xy-plane?",
+    "answer": "(0, 36)",
+    "answerType": null,
     "desmosExpressions": [
-      "y=x^3-3x^2-4x+12"
+      {
+        "table": {
+          "x": [
+            -27,
+            -9,
+            21
+          ],
+          "y": [
+            3,
+            0,
+            5
+          ]
+        }
+      },
+      "y_1\\sim\\frac{mx_1+b}{x_1+3}"
     ],
-    "bounds": {
-      "left": -4,
-      "right": 5,
-      "bottom": -20,
-      "top": 20
-    },
     "steps": [
       {
-        "text": "Type y=x^3-3x^2-4x+12 into Desmos."
+        "text": "Since g(x) = f(x)/(x+3) and f is linear (f(x) = mx+b), g(x) = (mx+b)/(x+3). Enter the table’s x and y values as a Desmos table, then regress y₁ ~ (mx₁+b)/(x₁+3) directly against the given data."
       },
       {
-        "text": "The curve crosses the x-axis at x = −2, 2, and 3. Their sum is 3.",
+        "text": "Desmos fits m=4, b=36 with R²=1 (a perfect fit). In this regression, b is exactly the y-intercept of y=f(x) — the (x₁+3) denominator doesn’t affect the intercept value since it only reshapes how f is divided to produce g, not the underlying line f(x)=4x+36. So the y-intercept is (0, 36), choice A.",
         "image": "assets/screenshots/adv-12.png"
       }
+    ],
+    "choices": [
+      "A) (0, 36)",
+      "B) (0, 12)",
+      "C) (0, 4)",
+      "D) (0, -9)"
     ]
   },
   {
     "id": "adv-13",
     "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "If P(x) = x³ − 4x² + x + 6, what is the remainder when P(x) is divided by (x − 3)?",
-    "answer": "0",
+    "subcategory": "Quadratic equations and functions",
+    "question": "A quadratic function models the height, in feet, of an object above the ground in terms of the time, in seconds, after the object is launched off an elevated surface. The model indicates the object has an initial height of 10 feet above the ground and reaches its maximum height of 1,034 feet above the ground 8 seconds after being launched. Based on the model, what is the height, in feet, of the object above the ground 10 seconds after being launched?",
+    "answer": "970",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=x^3-4x^2+x+6"
+      "10\\sim a(0-8)^2+1034",
+      "y=a(x-8)^2+1034",
+      "x=10"
     ],
-    "bounds": {
-      "left": -3,
-      "right": 5,
-      "bottom": -20,
-      "top": 20
-    },
     "steps": [
       {
-        "text": "Type y=x^3-4x^2+x+6 into Desmos. By the remainder theorem, the remainder equals P(3)."
+        "text": "The object’s height fits vertex form y=a(x-8)²+1034, since the maximum (vertex) is at (8, 1034). Use the initial height (0, 10) to solve for a: a point-regression 10~a(0-8)²+1034 in Desmos gives a=-16 (RMSE=0)."
       },
       {
-        "text": "Click the curve at x = 3 — it's exactly on the x-axis at (3, 0). The remainder is 0 (which also means x=3 is a root).",
+        "text": "Graphing y=-16(x-8)²+1034 and checking x=10 gives y=970 exactly, matching choice C. As the note on this one puts it: this is really just two points from an object thrown up and coming back down, and finding its height at a given time. Running a raw quadratic regression on the two points isn’t reliable on its own—Desmos can return it in a form that doesn’t actually show the true maximum—so it’s cleaner to rebuild it in vertex form using the known maximum (8, 1034), solve for a directly from the other point, and only then graph and check x=10.",
         "image": "assets/screenshots/adv-13.png"
       }
+    ],
+    "choices": [
+      "A) 234",
+      "B) 778",
+      "C) 970",
+      "D) 1,014"
     ]
   },
   {
     "id": "adv-14",
     "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "For P(x) = −x⁴ + 3x² + 2, what is P(−2)?",
-    "answer": "-2",
+    "subcategory": "Radical equations",
+    "question": "sqrt(k - x) = 58 - x. In the given equation, k is a constant. The equation has exactly one real solution. What is the minimum possible value of 4k?",
+    "answer": "231",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=-x^4+3x^2+2",
-      "(-2,-2)"
+      "\\sqrt{k-x_1}\\sim58-x_1",
+      "k=57.75",
+      "4k"
     ],
-    "bounds": {
-      "left": -4,
-      "right": 4,
-      "bottom": -20,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Type y=-x^4+3x^2+2 into Desmos."
+        "text": "Squaring both sides gives k-x = (58-x)², or k = x²-115x+3364 — an upward parabola in x. For a given k, the number of real x satisfying this depends on where the horizontal line k crosses that parabola: below the parabola’s minimum, there are 0 solutions; at the minimum, exactly 1 (the equation has exactly one real solution); above it, 2."
       },
       {
-        "text": "Click the curve at x = −2 — Desmos labels the point (−2, −2). So P(−2) = −2.",
+        "text": "So the minimum k for exactly one solution is the parabola’s vertex value. In Desmos, set up a point-regression √(k-x₁) ~ 58-x₁ (a single data point x₁, letting Desmos solve for x₁) with k on a slider, and drag k until RMSE=0 — RMSE=0 is the key signal here, since it means the left and right sides of the equation are exactly equal at that point (any k below the true minimum gives no real solution, so Desmos can’t find an x₁ that makes both sides match, and RMSE stays nonzero/undefined). The first k where RMSE hits 0 is the minimum: x₁=57.5, k=57.75. So 4k = 4(57.75) = 231.",
         "image": "assets/screenshots/adv-14.png"
       }
     ]
@@ -1349,718 +821,73 @@
   {
     "id": "adv-15",
     "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "How many distinct real roots does x³ − x² = 0 have?",
-    "answer": "2",
+    "subcategory": "Equivalent expressions",
+    "question": "The equation (x²+6x-7)/(x+7) = ax+d is true for all x ≠ -7, where a and d are integers. What is the value of a+d?",
+    "answer": "0",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=x^2*(x-1)"
+      "\\frac{x_1^2+6x_1-7}{x_1+7}\\sim ax_1+d\\left\\{x_1>-7\\right\\}",
+      "a+d"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 3,
-      "bottom": -5,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Type y=x^2*(x-1) into Desmos (that's x³−x² factored)."
+        "text": "Since the identity holds for every x except x=-7, pick any single convenient value (with x₁>-7 to stay in the domain) and regress the equation directly for a and d — the single-point regression a·x₁+d has two unknowns from one equation, so it won’t necessarily recover the true individual a and d, but any valid split still has to satisfy the same a+d value, which is all the question actually asks for."
       },
       {
-        "text": "The curve touches at x = 0 and crosses at x = 1 — 2 distinct real roots.",
+        "text": "At x₁=1: LHS = (1+6-7)/8 = 0, so a+d = 0 no matter which valid (a,d) Desmos lands on (here a=-1, d=1, RMSE=0). Just keep x away from -7. Choice C.",
         "image": "assets/screenshots/adv-15.png"
       }
+    ],
+    "choices": [
+      "A) -6",
+      "B) -1",
+      "C) 0",
+      "D) 1"
     ]
   },
   {
     "id": "adv-16",
     "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "A box's volume is V(x) = x(x − 2)(x + 3). What is V(4)?",
-    "answer": "56",
+    "subcategory": "Equivalent expressions",
+    "question": "f(x) = (x-1)(x+3)(x-2). In the xy-plane, when the graph of the function f, where y=f(x), is shifted up 6 units, the resulting graph is defined by the function g. If the graph of y=g(x) crosses through the point (4, b), where b is a constant, what is the value of b?",
+    "answer": "48",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=x*(x-2)*(x+3)",
-      "(4,56)"
+      "(x-1)(x+3)(x-2)+6",
+      "x=4"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 6,
-      "bottom": -20,
-      "top": 60
-    },
     "steps": [
       {
-        "text": "Type y=x*(x-2)*(x+3) into Desmos."
+        "text": "Shifting a graph up 6 units just means adding 6 to the function: g(x) = f(x) + 6 = (x-1)(x+3)(x-2) + 6. In Desmos, simply add +6 to the end of the original equation to shift it up."
       },
       {
-        "text": "Click the curve at x = 4 — Desmos labels the point (4, 56). So V(4) = 56.",
+        "text": "Then check where the shifted graph crosses x=4: g(4) = (4-1)(4+3)(4-2)+6 = (3)(7)(2)+6 = 42+6 = 48. So b=48.",
         "image": "assets/screenshots/adv-16.png"
       }
-    ]
-  },
-  {
-    "id": "adv-17",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "Solve: (x + 2)/(x − 1) = (x − 1)/(x − 4). If there is no solution, type \"no solution\".",
-    "answer": "no solution",
-    "desmosExpressions": [
-      "y=(x+2)/(x-1)",
-      "y=(x-1)/(x-4)"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -20,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Graph both rational functions together."
-      },
-      {
-        "text": "The two curves never cross anywhere on the graph — cross-multiplying leads to a false statement (−8 = 1), confirming there's no solution.",
-        "image": "assets/screenshots/adv-17.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-18",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "Solve for x: 2/(x − 3) + 1 = 5/(x − 3)",
-    "answer": "6",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=2/(x-3)+1",
-      "y=5/(x-3)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -10,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Graph y=2/(x-3)+1 and y=5/(x-3) as two separate expressions."
-      },
-      {
-        "text": "The curves intersect at x = 6.",
-        "image": "assets/screenshots/adv-18.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-19",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "If f(x) = (x² − 9)/(x − 3) for x ≠ 3, what is f(10)?",
-    "answer": "13",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=(x^2-9)/(x-3)",
-      "(10,13)"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 12,
-      "bottom": -5,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Type y=(x^2-9)/(x-3) into Desmos — notice it behaves like the simpler line y=x+3 almost everywhere, since (x−3) cancels."
-      },
-      {
-        "text": "Click the curve at x = 10 — Desmos labels the point (10, 13). So f(10) = 13.",
-        "image": "assets/screenshots/adv-19.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-20",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "For y = (x² − 4)/(x − 2), is there a vertical asymptote or a removable hole at x = 2? Type \"hole\" or \"asymptote\".",
-    "answer": "hole",
-    "desmosExpressions": [
-      "y=(x^2-4)/(x-2)"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 8,
-      "bottom": -5,
-      "top": 12
-    },
-    "steps": [
-      {
-        "text": "Type y=(x^2-4)/(x-2) into Desmos. Notice the numerator factors as (x-2)(x+2)."
-      },
-      {
-        "text": "The (x−2) factor cancels with the denominator, so x=2 is a removable hole, not an asymptote — the function just isn't defined there.",
-        "image": "assets/screenshots/adv-20.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-21",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "Solve for x: (x − 4)/(x + 2) = 0.5",
-    "answer": "10",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=(x-4)/(x+2)",
-      "y=0.5"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 14,
-      "bottom": -10,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Graph y=(x-4)/(x+2) and the horizontal line y=0.5."
-      },
-      {
-        "text": "They intersect at x = 10.",
-        "image": "assets/screenshots/adv-21.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-22",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "Solve for the positive value of x: 2|x − 4| + 3 = 11",
-    "answer": "8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=2\\left|x-4\\right|+3",
-      "y=11"
-    ],
-    "bounds": {
-      "left": -3,
-      "right": 12,
-      "bottom": -2,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Graph y=2|x-4|+3 and the horizontal line y=11."
-      },
-      {
-        "text": "They intersect at x = 0 and x = 8. The positive value is 8.",
-        "image": "assets/screenshots/adv-22.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-23",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "Solve for x: √(2x + 7) = 5",
-    "answer": "9",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=\\sqrt{2x+7}",
-      "y=5"
-    ],
-    "bounds": {
-      "left": -4,
-      "right": 12,
-      "bottom": -2,
-      "top": 8
-    },
-    "steps": [
-      {
-        "text": "Graph y=sqrt(2x+7) and the horizontal line y=5."
-      },
-      {
-        "text": "They intersect at x = 9.",
-        "image": "assets/screenshots/adv-23.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-24",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "The system y = x² − 4 and y = −x + 2 has two solutions. What is the sum of their x-values?",
-    "answer": "-1",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=x^2-4",
-      "y=-x+2"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 5,
-      "bottom": -6,
-      "top": 8
-    },
-    "steps": [
-      {
-        "text": "Graph y=x^2-4 and y=-x+2 together."
-      },
-      {
-        "text": "They intersect at (−3, 5) and (2, 0). The sum of the x-values is −1.",
-        "image": "assets/screenshots/adv-24.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-25",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "The graph of y = (x − 3)² + 1 is obtained by shifting y = x² how many units to the right?",
-    "answer": "3",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=(x-3)^2+1",
-      "y=x^2"
-    ],
-    "bounds": {
-      "left": -3,
-      "right": 8,
-      "bottom": -2,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Graph y=x^2 and y=(x-3)^2+1 together."
-      },
-      {
-        "text": "The second parabola is the first one shifted 3 units right (and 1 up). The horizontal shift is 3.",
-        "image": "assets/screenshots/adv-25.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-26",
-    "category": "Advanced Math",
-    "subcategory": "Exponential functions",
-    "question": "For y = 5(b/3)^(x − c) + d, where b, c, and d are positive constants and b > 3, how many times does the graph cross the x-axis?",
-    "answer": "0",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "b=6",
-      "c=2",
-      "d=3",
-      "y=5*(b/3)^(x-c)+d"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -5,
-      "top": 50
-    },
-    "steps": [
-      {
-        "text": "Set b=6, c=2, d=3 (any values satisfying b>3, all positive) and graph the equation."
-      },
-      {
-        "text": "Since b/3 > 1, the exponential part is always positive, and adding a positive d shifts the whole curve above the x-axis — it never crosses, no matter the constants. The answer is 0.",
-        "image": "assets/screenshots/adv-26.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-27",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "What is the positive solution to 3|2 − x| + 4|2 − x| = 35?",
-    "answer": "7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=7\\left|2-x\\right|",
-      "y=35"
     ],
     "bounds": {
       "left": -10,
-      "right": 15,
-      "bottom": -5,
-      "top": 45
-    },
-    "steps": [
-      {
-        "text": "Combine like terms first: 3|2-x|+4|2-x| = 7|2-x|. Graph y=7|2-x| and the horizontal line y=35."
-      },
-      {
-        "text": "They intersect at x = −3 and x = 7. The positive solution is 7.",
-        "image": "assets/screenshots/adv-27.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-28",
-    "category": "Advanced Math",
-    "subcategory": "Quadratic equations and functions",
-    "question": "For what value of k does the line y = 4x + k intersect the parabola y = x² at exactly one point?",
-    "answer": "-4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "k=-4",
-      "y=x^2",
-      "y=4x+k"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 30
-    },
-    "steps": [
-      {
-        "text": "Graph y=x^2 and y=4x+k with k as a slider."
-      },
-      {
-        "text": "Set k = −4 — the line just touches the parabola at a single point (tangent), instead of crossing it twice.",
-        "image": "assets/screenshots/adv-28.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-29",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "What is the solution to √(3x + 4) = x − 2? (Check for extraneous solutions.)",
-    "answer": "7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=\\sqrt{3x+4}",
-      "y=x-2"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 10,
-      "bottom": -5,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Graph y=sqrt(3x+4) and y=x-2 together."
-      },
-      {
-        "text": "They only actually cross once, at x = 7 — squaring both sides algebraically also produces x = 0, but that value doesn't satisfy the original equation (it's extraneous), which the graph confirms.",
-        "image": "assets/screenshots/adv-29.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-30",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "What is the solution to √(x + 10) = x − 2? (Check for extraneous solutions.)",
-    "answer": "6",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=\\sqrt{x+10}",
-      "y=x-2"
-    ],
-    "bounds": {
-      "left": -3,
-      "right": 10,
-      "bottom": -2,
-      "top": 8
-    },
-    "steps": [
-      {
-        "text": "Graph y=sqrt(x+10) and y=x-2 together."
-      },
-      {
-        "text": "They cross at x = 6. Squaring both sides algebraically also produces x = −1, but that's extraneous since the graphs don't actually meet there.",
-        "image": "assets/screenshots/adv-30.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-31",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "What is the solution to 4/(x − 3) + 2/(x − 3) = 3?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=6/(x-3)",
-      "y=3"
-    ],
-    "steps": [
-      {
-        "text": "Combine like terms first: 4/(x-3)+2/(x-3) = 6/(x-3). Graph that alongside y=3."
-      },
-      {
-        "text": "They intersect at x = 5.",
-        "image": "assets/screenshots/adv-31.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-32",
-    "category": "Advanced Math",
-    "subcategory": "Quadratic equations and functions",
-    "question": "If f(x) = x² and g(x) = 3f(x − 2) − 5, what is g(5)?",
-    "answer": "22",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=3(x-2)^2-5",
-      "(5,22)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 8,
-      "bottom": -10,
-      "top": 30
-    },
-    "steps": [
-      {
-        "text": "g(x) = 3f(x-2)-5 = 3(x-2)^2-5. Type y=3(x-2)^2-5 into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 5 — Desmos labels the point (5, 22). So g(5) = 22.",
-        "image": "assets/screenshots/adv-32.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-33",
-    "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "If x = 3 is a root of x³ − 5x² + kx − 6 = 0, what is the value of k?",
-    "answer": "8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "k=8",
-      "y=x^3-5x^2+k*x-6"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 6,
-      "bottom": -20,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Graph y=x^3-5x^2+kx-6 with k as a slider."
-      },
-      {
-        "text": "Set k = 8 — the curve now passes through x = 3 exactly, confirming it's a root.",
-        "image": "assets/screenshots/adv-33.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-34",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "The system y = x² − 2x and y = x + 4 has two solutions. What is the positive difference between their x-values?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=x^2-2x",
-      "y=x+4"
-    ],
-    "bounds": {
-      "left": -3,
-      "right": 6,
-      "bottom": -5,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Graph y=x^2-2x and y=x+4 together."
-      },
-      {
-        "text": "They intersect at x = −1 and x = 4. The positive difference is 5.",
-        "image": "assets/screenshots/adv-34.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-35",
-    "category": "Advanced Math",
-    "subcategory": "Exponential functions",
-    "question": "What is the solution to 2^(3x) = 4^(x + 2)?",
-    "answer": "4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=2^{3x}",
-      "y=4^{x+2}"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 5,
-      "bottom": -500,
-      "top": 4500
-    },
-    "steps": [
-      {
-        "text": "Graph y=2^(3x) and y=4^(x+2), grouping each exponent in braces: 2^{3x} and 4^{x+2}."
-      },
-      {
-        "text": "They intersect at x = 4.",
-        "image": "assets/screenshots/adv-35.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-36",
-    "category": "Advanced Math",
-    "subcategory": "Rational expressions and equations",
-    "question": "What is the solution to 2x/(x − 4) = 8/(x − 4) + 3? If there is no solution, type \"no solution\".",
-    "answer": "no solution",
-    "desmosExpressions": [
-      "y=2x/(x-4)",
-      "y=8/(x-4)+3"
-    ],
-    "bounds": {
-      "left": -5,
       "right": 10,
       "bottom": -20,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Graph both sides of the equation."
-      },
-      {
-        "text": "Solving algebraically gives x = 4 — but that's exactly where both sides are undefined (division by zero), so it's extraneous. There's no valid solution.",
-        "image": "assets/screenshots/adv-36.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-37",
-    "category": "Advanced Math",
-    "subcategory": "Quadratic equations and functions",
-    "question": "A ball's height is modeled by h(t) = −16t² + vt, where v is the initial velocity. If the ball reaches a maximum height of 100 feet, what is the value of v?",
-    "answer": "80",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "v=80",
-      "y=-16x^2+v*x"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 6,
-      "bottom": -50,
-      "top": 120
-    },
-    "steps": [
-      {
-        "text": "Graph y=-16x^2+vx with v as a slider."
-      },
-      {
-        "text": "Set v = 80 — the peak of the parabola reaches exactly 100.",
-        "image": "assets/screenshots/adv-37.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-38",
-    "category": "Advanced Math",
-    "subcategory": "Polynomial expressions and equations",
-    "question": "The equation x³ − 2x² − 5x + 6 = 0 has three real roots. What is the sum of the roots?",
-    "answer": "2",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=x^3-2x^2-5x+6"
-    ],
-    "bounds": {
-      "left": -4,
-      "right": 5,
-      "bottom": -20,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Type y=x^3-2x^2-5x+6 into Desmos and find where it crosses the x-axis."
-      },
-      {
-        "text": "The roots are x = −2, 1, and 3. Their sum is 2.",
-        "image": "assets/screenshots/adv-38.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-39",
-    "category": "Advanced Math",
-    "subcategory": "Exponential functions",
-    "question": "If f(x) = 2^x, then f(x + 3) = k · f(x) for all x. What is the value of k?",
-    "answer": "8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=2^{x+3}",
-      "y=8*2^x"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 6,
-      "bottom": -5,
-      "top": 100
-    },
-    "steps": [
-      {
-        "text": "Graph y=2^(x+3) and y=8*2^x, grouping the first exponent in braces: 2^{x+3}."
-      },
-      {
-        "text": "The two curves land exactly on top of each other — confirming f(x+3) is always 8 times f(x). So k = 8.",
-        "image": "assets/screenshots/adv-39.png"
-      }
-    ]
-  },
-  {
-    "id": "adv-40",
-    "category": "Advanced Math",
-    "subcategory": "Nonlinear functions and their graphs",
-    "question": "What is the minimum value of y = 4|x − 3| + 2|x − 3| − 18?",
-    "answer": "-18",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=6\\left|x-3\\right|-18"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 12,
-      "bottom": -20,
-      "top": 20
-    },
-    "steps": [
-      {
-        "text": "Combine like terms first: 4|x-3|+2|x-3| = 6|x-3|. Graph y=6|x-3|-18."
-      },
-      {
-        "text": "The lowest point of the V-shape is at (3, −18). The minimum value is −18.",
-        "image": "assets/screenshots/adv-40.png"
-      }
-    ]
+      "top": 80
+    }
   },
   {
     "id": "psda-1",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A bag of trail mix provides 150 mg of magnesium per serving, which is 5% of an adult's daily allowance. If p percent of the daily allowance is provided by x servings, what is p when x = 4?",
-    "answer": "20",
+    "subcategory": "Ratios, rates, proportional relationships, and units",
+    "question": "The positive number a is 2,241% of the sum of the positive numbers b and c, and b is 83% of c. What percent of b is a?",
+    "answer": "4941",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=5x",
-      "(4,20)"
+      "[a,b,a]\\sim\\left[\\frac{2241}{100}(b+c),\\frac{83}{100}c,\\frac{q}{100}b\\right]"
     ],
-    "bounds": {
-      "left": -1,
-      "right": 10,
-      "bottom": -5,
-      "top": 60
-    },
     "steps": [
       {
-        "text": "Each serving provides 5% of the daily allowance, so p = 5x. Type y=5x into Desmos."
+        "text": "Since every relationship here is a percent (proportional), the actual scale of b and c doesn’t matter — only their ratio does. Set up a single 3-way regression that captures all three given facts at once: a=2241%(b+c), b=83%c, and a=q%·b, where q is a placeholder variable (any letter other than a, b, c) standing in for the percent we’re solving for."
       },
       {
-        "text": "Click the curve at x = 4 — Desmos labels the point (4, 20). So p = 20.",
+        "text": "Desmos anchors the scale at b=1 and solves the rest: a=49.41, c=1.20482, and q=4941 (RMSE=0). So a is 4941% of b.",
         "image": "assets/screenshots/psda-1.png"
       }
     ]
@@ -2068,107 +895,110 @@
   {
     "id": "psda-2",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A recipe uses 3 cups of flour for every 2 cups of sugar. If a baker uses 18 cups of flour, how many cups of sugar are needed?",
-    "answer": "12",
-    "answerType": "numeric",
+    "subcategory": "Linear and exponential growth and decay",
+    "question": "The scatterplot shows the relationship between two variables, x and y. An equation for the exponential model shown can be written as y = a(b)ˣ, where a and b are positive constants. Which of the following is closest to the value of b?",
+    "answer": "0.83",
     "desmosExpressions": [
-      "y=(2/3)x",
-      "(18,12)"
+      {
+        "table": {
+          "x": [
+            5,
+            14
+          ],
+          "y": [
+            50,
+            10
+          ]
+        }
+      },
+      "y_1\\sim a\\cdot b^{x_1}"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 22,
-      "bottom": -2,
-      "top": 16
-    },
     "steps": [
       {
-        "text": "The ratio gives sugar = (2/3) × flour. Type y=(2/3)x into Desmos."
+        "text": "Pick two points that look like they fall right on the curve in the scatterplot (here, roughly (5, 50) and (14, 10)), enter them as a Desmos table, then run an exponential regression y₁ ~ a·bˣ₁ through them."
       },
       {
-        "text": "Click the curve at x = 18 — Desmos labels the point (18, 12). So 12 cups of sugar are needed.",
+        "text": "Desmos fits a=122.26064, b=0.836251 (R²=1). Since b must be positive and the model is decreasing, b is between 0 and 1 — 0.836251 is closest to choice A, 0.83.",
         "image": "assets/screenshots/psda-2.png"
       }
+    ],
+    "answerType": null,
+    "choices": [
+      "A) 0.83",
+      "B) 1.83",
+      "C) 18.36",
+      "D) 126.35"
     ]
   },
   {
     "id": "psda-3",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A price is first increased by 20%, then the new price is decreased by 25%. The final price is what percent of the original price?",
-    "answer": "90",
+    "subcategory": "Ratios, rates, proportional relationships, and units",
+    "question": "The positive number a is 230% of the number b, and a is 60% of the number c. If c is p% of b, which of the following is closest to the value of p?",
+    "answer": "383",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=0.9x",
-      "(100,90)"
+      "[a,a,c]\\sim\\left[\\frac{230}{100}b,\\frac{60}{100}c,\\frac{p}{100}b\\right]"
     ],
-    "bounds": {
-      "left": -10,
-      "right": 120,
-      "bottom": -10,
-      "top": 120
-    },
     "steps": [
       {
-        "text": "Combine the two changes: 1.20 × 0.75 = 0.9. Type y=0.9x into Desmos."
+        "text": "Same trick as before: bundle all three percent relationships into one 3-way regression — a=230%·b, a=60%·c, and c=p%·b — and let Desmos solve them together."
       },
       {
-        "text": "Click the curve at x = 100 (the original price as a percent) — Desmos labels (100, 90). The final price is 90% of the original.",
+        "text": "Anchoring at b=1, Desmos gives a=2.3, c=3.83333, and p=383.33333 (RMSE=0). Closest choice is D, 383.",
         "image": "assets/screenshots/psda-3.png"
       }
+    ],
+    "choices": [
+      "A) 138",
+      "B) 217",
+      "C) 283",
+      "D) 383"
     ]
   },
   {
     "id": "psda-4",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A car travels 252 miles on 8.4 gallons of gas. At this rate, how many miles can it travel on 12.5 gallons?",
-    "answer": "375",
-    "answerType": "numeric",
+    "subcategory": "One-variable data (distributions, center, spread)",
+    "question": "For data set A, the table summarizes the distribution of the number of deliveries received by an office each day during a period of 11 days: 0 deliveries on 2 days, 3 deliveries on 2 days, 4 deliveries on 2 days, 5 deliveries on 2 days, 6 deliveries on 1 day, 7 deliveries on 1 day, 13 deliveries on 1 day. The data value 13 was recorded in error and is removed from data set A to create data set B, which consists of the remaining 10 data values. Which statement best compares the median of data set A and the median of data set B?",
+    "answer": "C",
+    "answerType": null,
     "desmosExpressions": [
-      "y=30x",
-      "(12.5,375)"
+      "\\operatorname{median}(0,0,3,3,4,4,5,5,6,7,13)",
+      "\\operatorname{median}(0,0,3,3,4,4,5,5,6,7)"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 15,
-      "bottom": -20,
-      "top": 400
-    },
     "steps": [
       {
-        "text": "The rate is 252/8.4 = 30 miles per gallon. Type y=30x into Desmos."
+        "text": "List out all 11 values of data set A from the table, sorted: 0,0,3,3,4,4,5,5,6,7,13. Use Desmos’s median() function directly on the list — median gives 4 (the 6th of 11 sorted values)."
       },
       {
-        "text": "Click the curve at x = 12.5 — Desmos labels the point (12.5, 375).",
+        "text": "Data set B removes the 13, leaving 10 values: 0,0,3,3,4,4,5,5,6,7. median() on this list also gives 4 (average of the 5th and 6th values, 4 and 4). Since both medians are 4, the medians are equal — choice C.",
         "image": "assets/screenshots/psda-4.png"
       }
+    ],
+    "choices": [
+      "A) The median of data set B is less than the median of data set A.",
+      "B) The median of data set B is greater than the median of data set A.",
+      "C) The median of data set B is equal to the median of data set A.",
+      "D) There is not enough information to compare the medians of the two data sets."
     ]
   },
   {
     "id": "psda-5",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "In a survey, 40% of respondents own a car, and 25% of car owners also own a bike. What percentage of all respondents own both a car and a bike?",
-    "answer": "10",
+    "subcategory": "One-variable data (distributions, center, spread)",
+    "question": "Data set A consists of 10 positive integers less than 60. The list shown gives 9 of the integers from data set A: 43, 45, 44, 43, 38, 39, 40, 46, 40. The mean of these 9 integers is 42. If the mean of data set A is an integer that is greater than 42, what is the value of the largest integer from data set A?",
+    "answer": "52",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=0.4*0.25*x",
-      "(100,10)"
+      "\\operatorname{mean}(43,45,44,43,38,39,40,46,40,52)"
     ],
-    "bounds": {
-      "left": -10,
-      "right": 120,
-      "bottom": -5,
-      "top": 20
-    },
     "steps": [
       {
-        "text": "Multiply the two rates: 0.40 × 0.25 = 0.10. Type y=0.4*0.25*x into Desmos."
+        "text": "The 9 known integers sum to 378 (mean 42). Adding a 10th positive integer x<60, the new mean is (378+x)/10, which must be a whole number greater than 42 — so 378+x must be a multiple of 10 and greater than 420, meaning x>42."
       },
       {
-        "text": "Click the curve at x = 100 — Desmos labels (100, 10). So 10% own both.",
+        "text": "Guess and check candidates ending so 378+x is a multiple of 10 (x=52 works, since 378+52=430): mean(43,45,44,43,38,39,40,46,40,52) = 43, an integer greater than 42. Since 52<60 and no smaller qualifying x exceeds the current max of 46, the largest integer in data set A is 52.",
         "image": "assets/screenshots/psda-5.png"
       }
     ]
@@ -2176,1079 +1006,237 @@
   {
     "id": "psda-6",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A store marks up its wholesale price by 40% to set the retail price. If the retail price is $84, what was the wholesale price?",
-    "answer": "60",
-    "answerType": "numeric",
+    "subcategory": "Linear and exponential growth and decay",
+    "question": "The scatterplot shows the relationship between two variables, x and y, for data set E. A line of best fit is shown. Data set F is created by multiplying the y-coordinate of each data point from data set E by 3.9. Which of the following could be an equation of a line of best fit for data set F?",
+    "answer": "y = 46.8 + 5.9x",
     "desmosExpressions": [
-      "y=1.4x",
-      "y=84"
+      {
+        "table": {
+          "x": [
+            18,
+            2
+          ],
+          "y": [
+            156,
+            58.5
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 80,
-      "bottom": -10,
-      "top": 100
-    },
     "steps": [
       {
-        "text": "Retail = 1.4 × wholesale. Graph y=1.4x and the horizontal line y=84."
+        "text": "Read two points that the original line of best fit for data set E passes through (roughly (18, 40) and (2, 15)), then multiply their y-coordinates by 3.9 to get two points that data set F’s line of best fit should roughly pass through: (18, 156) and (2, 58.5)."
       },
       {
-        "text": "They intersect at x = 60 — the wholesale price was $60.",
+        "text": "Running a linear regression through these two scaled points gives y=6.09375x+46.3125 (R²=1) — a rough estimate, since the two points were read off the graph by eye, but its 46.3 y-intercept and steep slope are clearly closest to choice A, y=46.8+5.9x.",
         "image": "assets/screenshots/psda-6.png"
       }
+    ],
+    "answerType": null,
+    "choices": [
+      "A) y = 46.8 + 5.9x",
+      "B) y = 46.8 + 1.5x",
+      "C) y = 12 + 5.9x",
+      "D) y = 12 + 1.5x"
     ]
   },
   {
     "id": "psda-7",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "How many liters of a 60% acid solution must be mixed with a 20% solution to create 10 liters of a 44% solution?",
-    "answer": "6",
-    "answerType": "numeric",
+    "subcategory": "One-variable data (distributions, center, spread)",
+    "question": "Data set A and data set B each consist of 27 values. The table shows the frequencies of the values for each data set: value 30 (A: 2, B: 9), 34 (A: 4, B: 7), 38 (A: 5, B: 5), 42 (A: 7, B: 4), 46 (A: 9, B: 2). Which of the following statements best compares the means of the two data sets?",
+    "answer": "A",
+    "answerType": null,
     "desmosExpressions": [
-      "y=0.6x+0.2*(10-x)",
-      "y=4.4"
+      "\\operatorname{mean}(30,30,34,34,34,34,38,38,38,38,38,42,42,42,42,42,42,42,46,46,46,46,46,46,46,46,46)",
+      "\\operatorname{mean}(30,30,30,30,30,30,30,30,30,34,34,34,34,34,34,34,38,38,38,38,38,42,42,42,42,46,46)"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -1,
-      "top": 8
-    },
     "steps": [
       {
-        "text": "Let x = liters of the 60% solution. Total acid: 0.6x+0.2(10-x). Graph that alongside y=4.4 (44% of 10 liters)."
+        "text": "To find the mean from a frequency table in Desmos, list out every value repeated as many times as its frequency, then take mean() of the full list — you just have to make sure to include all the numbers of each data set."
       },
       {
-        "text": "They cross at x = 6 — 6 liters of the 60% solution are needed.",
+        "text": "mean() of data set A’s 27 values gives 40.5185185185; data set B’s 27 values gives 35.4814814815. Since A’s mean is greater, choice A is correct.",
         "image": "assets/screenshots/psda-7.png"
       }
+    ],
+    "choices": [
+      "A) The mean of data set A is greater than the mean of data set B.",
+      "B) The mean of data set A is less than the mean of data set B.",
+      "C) The mean of data set A is equal to the mean of data set B.",
+      "D) There is not enough information to compute the means of the data sets."
     ]
   },
   {
     "id": "psda-8",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A machine produces 20 units every 5 minutes. At this rate, how many units does it produce in 50 minutes?",
-    "answer": "200",
+    "subcategory": "Ratios, rates, proportional relationships, and units",
+    "question": "A sample of oak has a density of 807 kilograms per cubic meter. The sample is in the shape of a cube, where each edge has a length of 0.90 meters. To the nearest whole number, what is the mass, in kilograms, of this sample?",
+    "answer": "588",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=4x",
-      "(50,200)"
+      "(.9)^3(807)"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 60,
-      "bottom": -20,
-      "top": 220
-    },
     "steps": [
       {
-        "text": "The rate is 20/5 = 4 units per minute. Type y=4x into Desmos."
+        "text": "Density = mass/volume, so mass = density × volume. The cube’s volume is (0.9)³ cubic meters."
       },
       {
-        "text": "Click the curve at x = 50 — Desmos labels (50, 200).",
+        "text": "(0.9)³ × 807 = 588.303, which rounds to 588 kilograms — choice A.",
         "image": "assets/screenshots/psda-8.png"
       }
+    ],
+    "choices": [
+      "A) 588",
+      "B) 726",
+      "C) 897",
+      "D) 1,107"
     ]
   },
   {
     "id": "psda-9",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "An item's price, including 8% sales tax, is $64.80. What was the price before tax?",
-    "answer": "60",
-    "answerType": "numeric",
+    "subcategory": "Ratios, rates, proportional relationships, and units",
+    "question": "The speeds of objects A, B, and C are a meters per second, b meters per second, and c meters per second, respectively. If the speed of object A is 5,900% of the speed of object C and the speed of object C is 0.008% of the speed of object B, which expression represents the value of a+b in terms of c?",
+    "answer": "12559c",
     "desmosExpressions": [
-      "y=1.08x",
-      "y=64.80"
+      "[A,C]\\sim\\left[\\frac{5900}{100}C,\\frac{0.008}{100}B\\right]\\left\\{A>1,B>1,C>1\\right\\}",
+      "A+B",
+      "12559C"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 80,
-      "bottom": -10,
-      "top": 80
-    },
     "steps": [
       {
-        "text": "Price with tax = 1.08 × original price. Graph y=1.08x and y=64.80."
+        "text": "Bundle both percent relationships (a=5900%·c and c=0.008%·b) into one 2-way regression with a domain restriction keeping all three positive, and let Desmos solve them together."
       },
       {
-        "text": "They cross at x = 60 — the price before tax was $60.",
+        "text": "Desmos gives A=0.141601, C=0.00240001, B=30.00015 (RMSE=0). Checking A+B against each answer choice×C, 12559C matches A+B exactly (both 30.1417522479) — confirming a+b = 12559c, choice D.",
         "image": "assets/screenshots/psda-9.png"
       }
+    ],
+    "answerType": null,
+    "choices": [
+      "A) 1,840c",
+      "B) 5,908c",
+      "C) 6,025c",
+      "D) 12,559c"
     ]
   },
   {
     "id": "psda-10",
     "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Ratios, rates, and percentages",
-    "question": "A population grows 10% each year. Starting at 5,000, what is the population after 3 years, rounded to the nearest whole number?",
-    "answer": "6655",
-    "answerType": "numeric",
+    "subcategory": "One-variable data (distributions, center, spread)",
+    "question": "The dot plots represent the distributions of values in data sets A and B. Data set A: value 10 (1), 11 (3), 12 (2), 13 (3), 14 (2), 15 (4), 16 (1). Data set B: value 10 (2), 11 (3), 12 (1), 13 (1), 14 (1), 15 (3), 16 (2). Which of the following statements must be true? I. The median of data set A is equal to the median of data set B. II. The standard deviation of data set A is equal to the standard deviation of data set B.",
+    "answer": "A",
+    "answerType": null,
     "desmosExpressions": [
-      "y=5000*1.1^x",
-      "(3,6655)"
+      "\\operatorname{median}(10,11,11,11,12,12,13,13,13,14,14,15,15,15,15,16)",
+      "\\operatorname{stdev}(10,11,11,11,12,12,13,13,13,14,14,15,15,15,15,16)",
+      "\\operatorname{median}(10,10,11,11,11,12,13,14,15,15,15,16,16)",
+      "\\operatorname{stdev}(10,10,11,11,11,12,13,14,15,15,15,16,16)"
     ],
-    "bounds": {
-      "left": -1,
-      "right": 6,
-      "bottom": -500,
-      "top": 7000
-    },
     "steps": [
       {
-        "text": "Type y=5000*1.1^x into Desmos."
+        "text": "Read the frequency of each value straight off the dot plots, list out every value from data set A that many times, and do the same for data set B. Then run median(...) and stdev(...) on each full list of numbers."
       },
       {
-        "text": "Click the curve at x = 3 — Desmos labels (3, 6655).",
+        "text": "Data set A (16 values): median = 13, stdev ≈ 1.821. Data set B (13 values): median = 13, stdev ≈ 2.273. The medians are equal (statement I true), but the standard deviations are not (statement II false) — data set B is more spread out. So the answer is A, I only.",
         "image": "assets/screenshots/psda-10.png"
       }
-    ]
-  },
-  {
-    "id": "psda-11",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "What is the mean of the data set 12, 15, 18, 21, 24, 30?",
-    "answer": "20",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(12,0)",
-      "(15,0)",
-      "(18,0)",
-      "(21,0)",
-      "(24,0)",
-      "(30,0)",
-      "x=20"
     ],
-    "bounds": {
-      "left": 8,
-      "right": 34,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "Plot each value as a point on the x-axis: (12,0), (15,0), etc. Add a list L={12,15,18,21,24,30} and type mean(L)."
-      },
-      {
-        "text": "Desmos reports mean(L) = 20 — the vertical line marks where it falls among the data.",
-        "image": "assets/screenshots/psda-11.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-12",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "What is the median of the data set 7, 3, 9, 15, 11, 5, 13?",
-    "answer": "9",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(7,0)",
-      "(3,0)",
-      "(9,0)",
-      "(15,0)",
-      "(11,0)",
-      "(5,0)",
-      "(13,0)",
-      "x=9"
-    ],
-    "bounds": {
-      "left": 0,
-      "right": 18,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "Plot each value as a point on the x-axis. Add a list L={7,3,9,15,11,5,13} and type median(L)."
-      },
-      {
-        "text": "Desmos reports median(L) = 9 — the middle value once sorted.",
-        "image": "assets/screenshots/psda-12.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-13",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "What is the standard deviation of the data set 10, 12, 14, 16, 18? (Use Desmos's stdev function and round to the nearest hundredth.)",
-    "answer": "3.16",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(10,0)",
-      "(12,0)",
-      "(14,0)",
-      "(16,0)",
-      "(18,0)",
-      "x=14"
-    ],
-    "bounds": {
-      "left": 6,
-      "right": 22,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "Plot each value as a point on the x-axis. Add a list L={10,12,14,16,18} and type stdev(L)."
-      },
-      {
-        "text": "Desmos reports stdev(L) ≈ 3.16, showing how spread out the data is around the mean (marked at x=14).",
-        "image": "assets/screenshots/psda-13.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-14",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "What is the range of the data set 8, 22, 14, 3, 19, 11?",
-    "answer": "19",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(8,0)",
-      "(22,0)",
-      "(14,0)",
-      "(3,0)",
-      "(19,0)",
-      "(11,0)",
-      "x=3",
-      "x=22"
-    ],
-    "bounds": {
-      "left": 0,
-      "right": 25,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "Plot each value on the x-axis. The two vertical lines mark the smallest (3) and largest (22) values."
-      },
-      {
-        "text": "Range = greatest − least = 22 − 3 = 19.",
-        "image": "assets/screenshots/psda-14.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-15",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "The mean of 6, 9, 12, x, and 18 is 12. What is the value of x?",
-    "answer": "15",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(6,0)",
-      "(9,0)",
-      "(12,0)",
-      "(18,0)",
-      "(15,0)"
-    ],
-    "bounds": {
-      "left": 0,
-      "right": 22,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "The five values must sum to 5×12=60. The four known values sum to 6+9+12+18=45."
-      },
-      {
-        "text": "So x = 60 − 45 = 15 — plotted here alongside the other four points.",
-        "image": "assets/screenshots/psda-15.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-16",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "A class of 20 students has a mean score of 80. Another class of 30 students has a mean score of 90. What is the combined mean of all 50 students?",
-    "answer": "86",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=86"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 100
-    },
-    "steps": [
-      {
-        "text": "Total points = 20×80 + 30×90 = 1600+2700 = 4300. Type (20*80+30*90)/50 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 86 — the weighted combined mean.",
-        "image": "assets/screenshots/psda-16.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-17",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "What is the median of the data set 45, 12, 78, 34, 56, 23, 90?",
-    "answer": "45",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(45,0)",
-      "(12,0)",
-      "(78,0)",
-      "(34,0)",
-      "(56,0)",
-      "(23,0)",
-      "(90,0)",
-      "x=45"
-    ],
-    "bounds": {
-      "left": 0,
-      "right": 95,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "Plot each value on the x-axis. Add a list L={45,12,78,34,56,23,90} and type median(L)."
-      },
-      {
-        "text": "Desmos reports median(L) = 45.",
-        "image": "assets/screenshots/psda-17.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-18",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "What is the mode of the data set 2, 4, 4, 4, 5, 5, 7, 9?",
-    "answer": "4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(2,0)",
-      "(4,0.05)",
-      "(4,0.1)",
-      "(4,0.15)",
-      "(5,0.05)",
-      "(5,0.1)",
-      "(7,0)",
-      "(9,0)"
-    ],
-    "bounds": {
-      "left": 0,
-      "right": 11,
-      "bottom": -1,
-      "top": 1
-    },
-    "steps": [
-      {
-        "text": "Plot each value, stacking repeats slightly so you can see how many times each appears."
-      },
-      {
-        "text": "4 appears three times — more than any other value. The mode is 4.",
-        "image": "assets/screenshots/psda-18.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-19",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "A data set is 5, 7, 8, 9, and 41. If the outlier 41 is removed, what is the mean of the remaining four values?",
-    "answer": "7.25",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(5,0)",
-      "(7,0)",
-      "(8,0)",
-      "(9,0)",
-      "(41,0)",
-      "x=7.25"
-    ],
-    "bounds": {
-      "left": 0,
-      "right": 45,
-      "bottom": -2,
-      "top": 4
-    },
-    "steps": [
-      {
-        "text": "Plot all five values, including the outlier at 41, to see how far it sits from the rest."
-      },
-      {
-        "text": "The remaining four (5,7,8,9) sum to 29, so their mean is 29/4 = 7.25 — marked by the vertical line, much closer to the main cluster.",
-        "image": "assets/screenshots/psda-19.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-20",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Statistics: mean, median, and standard deviation",
-    "question": "A store's morning sales average $500 per hour over 6 hours. Its afternoon sales average $700 per hour over 4 hours. What is the average hourly sales for the full 10-hour day?",
-    "answer": "580",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=580"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -50,
-      "top": 650
-    },
-    "steps": [
-      {
-        "text": "Total sales = 500×6 + 700×4 = 3000+2800 = 5800. Type (500*6+700*4)/10 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 580.",
-        "image": "assets/screenshots/psda-20.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-21",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A scatterplot shows the points (1,5), (2,9), (3,13), and (4,17). Using the line of best fit, what value does the model predict at x = 10?",
-    "answer": "41",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(1,5)",
-      "(2,9)",
-      "(3,13)",
-      "(4,17)",
-      "y=4x+1",
-      "(10,41)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 12,
-      "bottom": -5,
-      "top": 45
-    },
-    "steps": [
-      {
-        "text": "Plot the four points, then add a table + regression (y₁ ~ mx₁+b): Desmos fits y = 4x + 1."
-      },
-      {
-        "text": "Trace the line to x = 10: y = 41.",
-        "image": "assets/screenshots/psda-21.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-22",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A scatterplot shows the points (1,3), (2,9), (3,19), and (4,33), which follow a quadratic pattern. What value does the model predict at x = 5?",
-    "answer": "51",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(1,3)",
-      "(2,9)",
-      "(3,19)",
-      "(4,33)",
-      "y=2x^2+1",
-      "(5,51)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 6,
-      "bottom": -5,
-      "top": 60
-    },
-    "steps": [
-      {
-        "text": "Plot the four points, then fit a quadratic with a table + regression (y₁ ~ ax₁²+bx₁+c): Desmos fits y = 2x² + 1."
-      },
-      {
-        "text": "Trace the curve to x = 5: y = 51.",
-        "image": "assets/screenshots/psda-22.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-23",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A scatterplot shows the points (0,3), (1,6), (2,12), and (3,24), which follow an exponential pattern. What value does the model predict at x = 5?",
-    "answer": "96",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(0,3)",
-      "(1,6)",
-      "(2,12)",
-      "(3,24)",
-      "y=3*2^x",
-      "(5,96)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 6,
-      "bottom": -10,
-      "top": 100
-    },
-    "steps": [
-      {
-        "text": "Plot the four points, then fit an exponential with a table + regression (y₁ ~ a*b^x₁): Desmos fits y = 3·2^x."
-      },
-      {
-        "text": "Trace the curve to x = 5: y = 96.",
-        "image": "assets/screenshots/psda-23.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-24",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A line of best fit is given by y = 2.5x + 10. According to the model, what is y when x = 20?",
-    "answer": "60",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=2.5x+10",
-      "(20,60)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 25,
-      "bottom": -5,
-      "top": 70
-    },
-    "steps": [
-      {
-        "text": "Type y=2.5x+10 into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 20 — Desmos labels (20, 60).",
-        "image": "assets/screenshots/psda-24.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-25",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A line of best fit is y = 5x + 2. For a data point at (8, 50), what is the residual (actual − predicted)?",
-    "answer": "8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=5x+2",
-      "(8,50)",
-      "(8,42)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 10,
-      "bottom": -5,
-      "top": 55
-    },
-    "steps": [
-      {
-        "text": "Graph y=5x+2 and plot the actual point (8,50) along with the predicted point (8,42) on the line."
-      },
-      {
-        "text": "The residual is the vertical gap between them: 50 − 42 = 8.",
-        "image": "assets/screenshots/psda-25.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-26",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A scatterplot shows the points (2,7), (4,13), (6,19), and (8,25). Using the line of best fit, what value does the model predict at x = 15?",
-    "answer": "46",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(2,7)",
-      "(4,13)",
-      "(6,19)",
-      "(8,25)",
-      "y=3x+1",
-      "(15,46)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 17,
-      "bottom": -5,
-      "top": 50
-    },
-    "steps": [
-      {
-        "text": "Plot the four points, then fit a line: Desmos reports y = 3x + 1."
-      },
-      {
-        "text": "Trace the line to x = 15: y = 46.",
-        "image": "assets/screenshots/psda-26.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-27",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A scatterplot shows the points (0,800), (1,400), (2,200), and (3,100), which follow an exponential decay pattern. What value does the model predict at x = 6?",
-    "answer": "12.5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(0,800)",
-      "(1,400)",
-      "(2,200)",
-      "(3,100)",
-      "y=800*0.5^x",
-      "(6,12.5)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 7,
-      "bottom": -50,
-      "top": 850
-    },
-    "steps": [
-      {
-        "text": "Plot the four points, then fit an exponential: Desmos fits y = 800·(0.5)^x."
-      },
-      {
-        "text": "Trace the curve to x = 6: y = 12.5.",
-        "image": "assets/screenshots/psda-27.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-28",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A town's population is modeled by p(t) = 1000(1.03)^t, where t is years from now. What population does the model predict after 15 years, rounded to the nearest whole number?",
-    "answer": "1558",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=1000*1.03^x",
-      "(15,1558)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 17,
-      "bottom": -100,
-      "top": 1700
-    },
-    "steps": [
-      {
-        "text": "Type y=1000*1.03^x into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 15 — Desmos labels (15, 1557.97), which rounds to 1558.",
-        "image": "assets/screenshots/psda-28.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-29",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A line of best fit is y = 1.8x + 32. According to the model, what is y when x = 25?",
-    "answer": "77",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=1.8x+32",
-      "(25,77)"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 28,
-      "bottom": -5,
-      "top": 85
-    },
-    "steps": [
-      {
-        "text": "Type y=1.8x+32 into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 25 — Desmos labels (25, 77).",
-        "image": "assets/screenshots/psda-29.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-30",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Scatterplots and data models",
-    "question": "A scatterplot shows the points (1,4), (2,7), (3,12), and (4,19), which follow a quadratic pattern. What value does the model predict at x = 6?",
-    "answer": "39",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(1,4)",
-      "(2,7)",
-      "(3,12)",
-      "(4,19)",
-      "y=x^2+3",
-      "(6,39)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 8,
-      "bottom": -5,
-      "top": 45
-    },
-    "steps": [
-      {
-        "text": "Plot the four points, then fit a quadratic: Desmos fits y = x² + 3."
-      },
-      {
-        "text": "Trace the curve to x = 6: y = 39.",
-        "image": "assets/screenshots/psda-30.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-31",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Probability",
-    "question": "A bag has 5 red, 3 blue, and 2 green marbles. What is the probability of drawing a blue marble, expressed as a percent?",
-    "answer": "30",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=30"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 40
-    },
-    "steps": [
-      {
-        "text": "There are 10 marbles total, 3 of them blue. Type 3/10*100 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 30 — a 30% chance.",
-        "image": "assets/screenshots/psda-31.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-32",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Probability",
-    "question": "A fair coin is flipped twice. What is the probability, as a percent, of getting heads both times?",
-    "answer": "25",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=25"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 35
-    },
-    "steps": [
-      {
-        "text": "Each flip has a 1/2 chance, and the flips are independent. Type 0.5*0.5*100 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 25.",
-        "image": "assets/screenshots/psda-32.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-33",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Probability",
-    "question": "The probability of an event occurring is 0.35. What is the probability, as a percent, that it does NOT occur?",
-    "answer": "65",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=65"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 75
-    },
-    "steps": [
-      {
-        "text": "Complementary probabilities add to 1. Type (1-0.35)*100 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 65.",
-        "image": "assets/screenshots/psda-33.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-34",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Probability",
-    "question": "In a class of 30 students, 18 play a sport. If a student is chosen at random, what is the probability, as a percent, that they play a sport?",
-    "answer": "60",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=60"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 70
-    },
-    "steps": [
-      {
-        "text": "Type 18/30*100 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 60.",
-        "image": "assets/screenshots/psda-34.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-35",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Probability",
-    "question": "A fair six-sided die is rolled once. What is the probability, as a percent, of rolling an odd number?",
-    "answer": "50",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=50"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 60
-    },
-    "steps": [
-      {
-        "text": "Three of the six faces (1, 3, 5) are odd. Type 3/6*100 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 50.",
-        "image": "assets/screenshots/psda-35.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-36",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Data inference and margin of error",
-    "question": "A poll of 1,000 voters found that 52% support a proposal, with a margin of error of 3 percentage points. What is the lower bound of the confidence interval, as a percent?",
-    "answer": "49",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=49"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 60
-    },
-    "steps": [
-      {
-        "text": "The interval spans from (reported − margin) to (reported + margin). Type 52-3 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 49.",
-        "image": "assets/screenshots/psda-36.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-37",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Data inference and margin of error",
-    "question": "A poll of 800 voters found that 47% support a candidate, with a margin of error of 4 percentage points. What is the upper bound of the confidence interval, as a percent?",
-    "answer": "51",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=51"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 60
-    },
-    "steps": [
-      {
-        "text": "Type 47+4 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 51.",
-        "image": "assets/screenshots/psda-37.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-38",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Data inference and margin of error",
-    "question": "In a random sample of 250 products, 15 were defective. Based on this sample, how many defective products would be expected in a shipment of 5,000?",
-    "answer": "300",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0.06x",
-      "(5000,300)"
-    ],
-    "bounds": {
-      "left": -100,
-      "right": 5500,
-      "bottom": -50,
-      "top": 350
-    },
-    "steps": [
-      {
-        "text": "The sample defect rate is 15/250 = 0.06. Type y=0.06x into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 5000 — Desmos labels (5000, 300).",
-        "image": "assets/screenshots/psda-38.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-39",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Data inference and margin of error",
-    "question": "A survey reports a result of 60% with a margin of error of 2.5 percentage points. What is the total width of the confidence interval, in percentage points?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=5"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -5,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "The interval extends the margin both above and below the reported value. Type 2*2.5 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 5.",
-        "image": "assets/screenshots/psda-39.png"
-      }
-    ]
-  },
-  {
-    "id": "psda-40",
-    "category": "Problem-Solving and Data Analysis",
-    "subcategory": "Data inference and margin of error",
-    "question": "A random sample of 400 people found that 25% prefer Brand A. If the population is 2,000,000, how many people are estimated to prefer Brand A?",
-    "answer": "500000",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0.25x",
-      "(2000000,500000)"
-    ],
-    "bounds": {
-      "left": -100000,
-      "right": 2200000,
-      "bottom": -50000,
-      "top": 550000
-    },
-    "steps": [
-      {
-        "text": "Type y=0.25x into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 2,000,000 — Desmos labels (2000000, 500000).",
-        "image": "assets/screenshots/psda-40.png"
-      }
+    "choices": [
+      "A) I only",
+      "B) II only",
+      "C) I and II",
+      "D) Neither I nor II"
     ]
   },
   {
     "id": "gt-1",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "A right triangle has legs of length 9 and 12. What is the length of the hypotenuse?",
-    "answer": "15",
-    "answerType": "numeric",
+    "subcategory": "Circles",
+    "question": "The circle shown has its center at (0,0). The circle passes through the point (8,0), and the point (2,k) also lies on the circle. What is the value of k?",
+    "answer": "sqrt(60)",
+    "answerType": null,
     "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le12\\right\\}",
-      "x=0\\left\\{0\\le y\\le9\\right\\}",
-      "y=9+(-0.75)x\\left\\{0\\le x\\le12\\right\\}"
+      "x^2+y^2=64",
+      "x=2",
+      "\\sqrt{60}"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 14,
-      "bottom": -2,
-      "top": 11
-    },
     "steps": [
       {
-        "text": "Graph the two legs and the hypotenuse as three restricted line segments in Desmos to see the triangle."
+        "text": "Since the circle is centered at the origin and passes through (8,0), its radius is 8, giving the equation x²+y²=64."
       },
       {
-        "text": "By the Pythagorean theorem, 9² + 12² = 81 + 144 = 225 = 15². The hypotenuse is 15.",
+        "text": "Substituting the point (2,k): 2²+k²=64, so k²=60 and k=√60 (taking the positive root, since k is positive in the figure). Graphing x²+y²=64 with x=2 confirms the intersection at (2, 7.746), and √60=7.74596669241 matches exactly — choice D.",
         "image": "assets/screenshots/gt-1.png"
       }
+    ],
+    "choices": [
+      "A) 6",
+      "B) 7",
+      "C) 8",
+      "D) √60"
     ]
   },
   {
     "id": "gt-2",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "In rectangle PQRS, diagonal QS = 17, and side PS is 7 more than side RS. What is the length of side RS?",
-    "answer": "8",
-    "answerType": "numeric",
+    "subcategory": "Circles",
+    "question": "A circle in the xy-plane has its center at (-1, 1). Line l is tangent to this circle at the point (5, -4). Which of the following points also lies on line l?",
+    "answer": "(10, 2)",
+    "answerType": null,
     "desmosExpressions": [
-      "x^2+(x+7)^2=289"
+      {
+        "table": {
+          "x": [
+            -1,
+            5
+          ],
+          "y": [
+            1,
+            -4
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b",
+      "y=\\frac{1}{.833333}(x-5)-4"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 15,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Let RS = x, so PS = x+7. By the Pythagorean theorem, x²+(x+7)²=17². Type x^2+(x+7)^2=289 into Desmos."
+        "text": "The slope of the radius from the center to the tangent point is .833333 (found by regressing a line through (-1,1) and (5,-4)). Since a tangent line is perpendicular to the radius at the point of tangency, take the reciprocal of that slope (with sign flipped) to get the tangent line’s slope, then build the line through (5,-4) with that slope."
       },
       {
-        "text": "The vertical line lands at x = 8.",
+        "text": "The tangent line is y = (1/.833333)(x-5) - 4. Guess-and-check each answer choice against this equation: only (10,2) fits exactly (1.2×5-4=2). Choice C.",
         "image": "assets/screenshots/gt-2.png"
       }
+    ],
+    "choices": [
+      "A) (0, 5/6)",
+      "B) (4, 7)",
+      "C) (10, 2)",
+      "D) (11, 1)"
     ]
   },
   {
     "id": "gt-3",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "In triangle ABC, angle A is 3 times angle B, and angle C is 20° more than angle B. What is the measure of angle B?",
-    "answer": "32",
+    "subcategory": "Area and volume",
+    "question": "A rectangle is formed by the four points (-4,-1), (4,5), (7,1), and (-1,-5) in the xy-plane. What is the area, in square units, of the rectangle?",
+    "answer": "50",
     "answerType": "numeric",
     "desmosExpressions": [
-      "5x+20=180"
+      "\\operatorname{distance}((-4,-1),(4,5))",
+      "\\operatorname{distance}((4,5),(7,1))",
+      "(10)(5)",
+      "\\operatorname{polygon}((-4,-1),(4,5),(7,1),(-1,-5))"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 50,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Angles sum to 180°: 3x + x + (x+20) = 180, which simplifies to 5x+20=180. Type that into Desmos."
+        "text": "The area of a rectangle is length × width, using two adjacent sides. Use Desmos’s distance() function to find the length of the side from (-4,-1) to (4,5), and the side from (4,5) to (7,1)."
       },
       {
-        "text": "The vertical line lands at x = 32.",
+        "text": "distance((-4,-1),(4,5)) = √(8²+6²) = √200 = 10. distance((4,5),(7,1)) = √(3²+4²) = √25 = 5. Area = 10×5 = 50.",
         "image": "assets/screenshots/gt-3.png"
       }
     ]
@@ -3256,26 +1244,21 @@
   {
     "id": "gt-4",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "Triangle ABC is similar to triangle DEF. If AB=8, DE=20, and BC=12, what is EF?",
-    "answer": "30",
+    "subcategory": "Circles",
+    "question": "The graph of x² + x + y² + y = 199/2 in the xy-plane is a circle. What is the length of the circle’s radius?",
+    "answer": "10",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=2.5x",
-      "(12,30)"
+      "x^2+x+y^2+y=\\frac{199}{2}",
+      "\\operatorname{distance}((-0.5,9.5),(-0.5,-10.5))",
+      "\\frac{20}{2}"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 15,
-      "bottom": -5,
-      "top": 35
-    },
     "steps": [
       {
-        "text": "The scale factor is DE/AB = 20/8 = 2.5. Type y=2.5x into Desmos."
+        "text": "Graph the equation directly in Desmos — it draws the circle without needing to complete the square by hand. Click on the circle to find its highest and lowest points (or furthest left/right), here (-0.5, 9.5) and (-0.5, -10.5)."
       },
       {
-        "text": "Click the curve at x = 12 — Desmos labels (12, 30). So EF = 30.",
+        "text": "Use distance() between those two points to get the diameter: distance((-0.5,9.5),(-0.5,-10.5)) = 20. Dividing by 2 gives the radius: 20/2 = 10.",
         "image": "assets/screenshots/gt-4.png"
       }
     ]
@@ -3283,965 +1266,160 @@
   {
     "id": "gt-5",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "In a triangle, one exterior angle measures 120°. The two remote interior angles measure x° and 2x°. What is the value of x?",
-    "answer": "40",
+    "subcategory": "Right triangles and trigonometry",
+    "question": "The perimeter of an isosceles right triangle is 18 + 18√2 inches. What is the length, in inches, of the hypotenuse of this triangle?",
+    "answer": "18",
     "answerType": "numeric",
     "desmosExpressions": [
-      "3x=120"
+      "18+18\\sqrt{2}\\sim x_1+x_1+x_1\\sqrt{2}"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 50,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "An exterior angle equals the sum of the two remote interior angles: x + 2x = 120. Type 3x=120 into Desmos."
+        "text": "The formula for an isosceles right triangle’s perimeter is x+x+x√2 (two equal legs plus the hypotenuse, which is leg×√2). Set the given perimeter as a regression equal to that formula to solve for the leg length x directly."
       },
       {
-        "text": "The vertical line lands at x = 40.",
+        "text": "Desmos gives x₁=12.72792 (RMSE=0). Since the hypotenuse equals x√2, computing 12.72792×√2 gives 17.9999970848 — essentially 18 (small rounding from the truncated x value). Choice C.",
         "image": "assets/screenshots/gt-5.png"
       }
+    ],
+    "choices": [
+      "A) 9",
+      "B) 9√2",
+      "C) 18",
+      "D) 18√2"
     ]
   },
   {
     "id": "gt-6",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "An isosceles triangle has a base angle of 50°. What is the measure of the vertex angle?",
-    "answer": "80",
-    "answerType": "numeric",
+    "subcategory": "Circles",
+    "question": "x^2+20x+y^2+16y = -20. The equation above defines a circle in the xy-plane. What are the coordinates of the center of the circle?",
+    "answer": "(-10, -8)",
+    "answerType": null,
     "desmosExpressions": [
-      "y=80"
+      "x^2+20x+y^2+16y=-20",
+      "(-10,-8)"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 90
-    },
     "steps": [
       {
-        "text": "Both base angles measure 50°. Type 180-2*50 directly into Desmos."
+        "text": "Graph the equation directly in Desmos rather than completing the square by hand — it draws the circle instantly."
       },
       {
-        "text": "Desmos evaluates it to 80.",
-        "image": "assets/screenshots/gt-6.png"
+        "text": "Plug in each answer choice as a point and see which one sits exactly at the center: (-10,-8) lands dead center of the circle. Choice B."
       }
-    ]
+    ],
+    "choices": [
+      "A) (-20, -16)",
+      "B) (-10, -8)",
+      "C) (10, 8)",
+      "D) (20, 16)"
+    ],
+    "bounds": {
+      "left": -30,
+      "right": 10,
+      "bottom": -25,
+      "top": 10
+    }
   },
   {
     "id": "gt-7",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "A right triangle has a hypotenuse of 26 and one leg of 10. What is the length of the other leg?",
-    "answer": "24",
+    "subcategory": "Circles",
+    "question": "A circle in the xy-plane has a diameter with endpoints (2, 4) and (2, 14). An equation of this circle is (x-2)^2+(y-9)^2=n^2, where n is a positive constant. What is the value of n?",
+    "answer": "5",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le24\\right\\}",
-      "x=0\\left\\{0\\le y\\le10\\right\\}",
-      "y=10+(-0.4167)x\\left\\{0\\le x\\le24\\right\\}"
+      "(2,4)",
+      "(2,14)",
+      "(x-2)^2+(y-9)^2=n^2",
+      "n=5"
     ],
-    "bounds": {
-      "left": -2,
-      "right": 26,
-      "bottom": -2,
-      "top": 12
-    },
     "steps": [
       {
-        "text": "Graph the two legs and the hypotenuse as three restricted line segments in Desmos to see the triangle."
+        "text": "Plot both endpoints of the diameter, then graph the given equation with n on a slider (using n instead of r, since a bare r triggers Desmos’s polar mode)."
       },
       {
-        "text": "By the Pythagorean theorem, 26² − 10² = 676 − 100 = 576 = 24². The other leg is 24.",
-        "image": "assets/screenshots/gt-7.png"
+        "text": "Drag the slider until the circle passes through both plotted points — it lands exactly at n=5, matching the radius (half the diameter’s length of 10)."
       }
     ]
   },
   {
     "id": "gt-8",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "Two parallel lines are cut by a transversal. One angle formed measures 65°. What is the measure of its same-side (co-interior) supplementary angle?",
-    "answer": "115",
+    "subcategory": "Circles",
+    "question": "Circle A in the xy-plane has the equation (x+5)^2+(y-5)^2=25. Circle B has the same center as circle A. The radius of circle B is two times the radius of circle A. The equation defining circle B in the xy-plane is (x+5)^2+(y-5)^2=k, where k is a constant. What is the value of k?",
+    "answer": "100",
     "answerType": "numeric",
     "desmosExpressions": [
-      "y=115"
+      "(x+5)^2+(y-5)^2=25",
+      "5\\cdot2",
+      "10^2"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 125
-    },
     "steps": [
       {
-        "text": "Co-interior angles are supplementary. Type 180-65 directly into Desmos."
+        "text": "Circle A’s equation shows radius²=25, so its radius is 5. Circle B’s radius is double that: 5·2=10."
       },
       {
-        "text": "Desmos evaluates it to 115.",
-        "image": "assets/screenshots/gt-8.png"
+        "text": "Since circle B’s equation is in the same (x+5)²+(y-5)²=k form, k is radius²: 10²=100."
       }
     ]
   },
   {
     "id": "gt-9",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "A triangle has sides of length 7, 10, and x. If the perimeter is 29, what is x?",
-    "answer": "12",
-    "answerType": "numeric",
+    "subcategory": "Circles",
+    "question": "A circle in the xy-plane has its center at (-4, -6). Line k is tangent to this circle at the point (-7, -7). What is the slope of line k? A) -3  B) -1/3  C) 1/3  D) 3",
+    "answer": "-3",
+    "answerType": null,
     "desmosExpressions": [
-      "7+10+x=29"
+      {
+        "table": {
+          "x": [
+            -4,
+            -7
+          ],
+          "y": [
+            -6,
+            -7
+          ]
+        }
+      },
+      "y_1\\sim mx_1+b",
+      "-\\frac{1}{m}"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 30,
-      "bottom": -10,
-      "top": 10
-    },
     "steps": [
       {
-        "text": "Type 7+10+x=29 into Desmos."
+        "text": "Enter the center and the tangent point as a table, then run a linear regression to find the slope of the radius connecting them: m=0.333333."
       },
       {
-        "text": "The vertical line lands at x = 12.",
-        "image": "assets/screenshots/gt-9.png"
+        "text": "A tangent line is perpendicular to the radius at the point of tangency, so take the negative reciprocal of the radius’s slope: -1/m = -3. Choice A."
       }
+    ],
+    "choices": [
+      "A) -3",
+      "B) -1/3",
+      "C) 1/3",
+      "D) 3"
     ]
   },
   {
     "id": "gt-10",
     "category": "Geometry and Trigonometry",
-    "subcategory": "Lines, angles, and triangles",
-    "question": "In a 30-60-90 triangle, the side opposite the 30° angle is 6. What is the length of the side opposite the 60° angle, rounded to the nearest hundredth?",
-    "answer": "10.39",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le6\\sqrt{3}\\right\\}",
-      "x=0\\left\\{0\\le y\\le6\\right\\}",
-      "y=6+(-0.5774)x\\left\\{0\\le x\\le6\\sqrt{3}\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -2,
-      "top": 8
-    },
-    "steps": [
-      {
-        "text": "In a 30-60-90 triangle, the side opposite 60° is √3 times the side opposite 30°. Graph the two legs and the hypotenuse as three restricted line segments in Desmos to see the triangle."
-      },
-      {
-        "text": "6√3 ≈ 10.39.",
-        "image": "assets/screenshots/gt-10.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-11",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a right triangle, an angle measures 30° and the hypotenuse is 10. What is the length of the side opposite the angle?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le8.66\\right\\}",
-      "x=0\\left\\{0\\le y\\le5\\right\\}",
-      "y=5+(-0.5774)x\\left\\{0\\le x\\le8.66\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 10,
-      "bottom": -2,
-      "top": 7
-    },
-    "steps": [
-      {
-        "text": "The opposite side is hypotenuse × sin(angle) = 10 × sin(30°). Graph it in Desmos as three restricted line segments to see the triangle."
-      },
-      {
-        "text": "10 × sin(30°) = 5.",
-        "image": "assets/screenshots/gt-11.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-12",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a right triangle, an angle measures 60° and the hypotenuse is 14. What is the length of the side adjacent to the angle?",
-    "answer": "7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le7\\right\\}",
-      "x=0\\left\\{0\\le y\\le12.12\\right\\}",
-      "y=12.12+(-1.7314)x\\left\\{0\\le x\\le7\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 9,
-      "bottom": -2,
-      "top": 14
-    },
-    "steps": [
-      {
-        "text": "The adjacent side is hypotenuse × cos(angle) = 14 × cos(60°). Graph it in Desmos as three restricted line segments to see the triangle."
-      },
-      {
-        "text": "14 × cos(60°) = 7.",
-        "image": "assets/screenshots/gt-12.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-13",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a right triangle, the side opposite an angle is 9 and the side adjacent is 12. What is the measure of the angle, in degrees, rounded to the nearest tenth?",
-    "answer": "36.9",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le12\\right\\}",
-      "x=0\\left\\{0\\le y\\le9\\right\\}",
-      "y=9+(-0.75)x\\left\\{0\\le x\\le12\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 14,
-      "bottom": -2,
-      "top": 11
-    },
-    "steps": [
-      {
-        "text": "Graph it in Desmos as three restricted line segments, then type arctan(9/12) on a new line."
-      },
-      {
-        "text": "Desmos evaluates arctan(9/12) ≈ 36.9°.",
-        "image": "assets/screenshots/gt-13.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-14",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a right triangle, an angle measures 40° and the side opposite is 15. What is the length of the hypotenuse, rounded to the nearest tenth?",
-    "answer": "23.3",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le17.87\\right\\}",
-      "x=0\\left\\{0\\le y\\le15\\right\\}",
-      "y=15+(-0.8394)x\\left\\{0\\le x\\le17.87\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 20,
-      "bottom": -2,
-      "top": 17
-    },
-    "steps": [
-      {
-        "text": "Hypotenuse = opposite / sin(angle) = 15 / sin(40°). Graph it in Desmos as three restricted line segments to see the triangle."
-      },
-      {
-        "text": "15 / sin(40°) ≈ 23.3.",
-        "image": "assets/screenshots/gt-14.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-15",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "If sin(x°) = cos(50°) for 0 < x < 90, what is the value of x?",
-    "answer": "40",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=40"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 50
-    },
-    "steps": [
-      {
-        "text": "Sine and cosine of complementary angles are equal: sin(x°) = cos(90°−x°). Type 90-50 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 40.",
-        "image": "assets/screenshots/gt-15.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-16",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "A ladder leaning against a wall makes a 65° angle with the ground. If the ladder is 12 feet long, how high up the wall does it reach, rounded to the nearest tenth?",
-    "answer": "10.9",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le5.07\\right\\}",
-      "x=0\\left\\{0\\le y\\le10.88\\right\\}",
-      "y=10.88+(-2.146)x\\left\\{0\\le x\\le5.07\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 7,
-      "bottom": -2,
-      "top": 13
-    },
-    "steps": [
-      {
-        "text": "Height = 12 × sin(65°). Graph it in Desmos as three restricted line segments to see the triangle."
-      },
-      {
-        "text": "12 × sin(65°) ≈ 10.9 feet.",
-        "image": "assets/screenshots/gt-16.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-17",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "From a height of 50 feet, the angle of depression to a boat is 25°. How far is the boat from the base of the height, rounded to the nearest tenth?",
-    "answer": "107.2",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le107.2\\right\\}",
-      "x=0\\left\\{0\\le y\\le50\\right\\}",
-      "y=50+(-0.4664)x\\left\\{0\\le x\\le107.2\\right\\}"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 115,
-      "bottom": -5,
-      "top": 55
-    },
-    "steps": [
-      {
-        "text": "Distance = height / tan(angle) = 50 / tan(25°). Graph it in Desmos as three restricted line segments to see the triangle."
-      },
-      {
-        "text": "50 / tan(25°) ≈ 107.2 feet.",
-        "image": "assets/screenshots/gt-17.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-18",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a right triangle, the two legs measure 8 and 15. What is the tangent of the angle opposite the side of length 8, rounded to the nearest hundredth?",
-    "answer": "0.53",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le15\\right\\}",
-      "x=0\\left\\{0\\le y\\le8\\right\\}",
-      "y=8+(-0.5333)x\\left\\{0\\le x\\le15\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 17,
-      "bottom": -2,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Graph it in Desmos as three restricted line segments, then type 8/15 on a new line."
-      },
-      {
-        "text": "8/15 ≈ 0.53.",
-        "image": "assets/screenshots/gt-18.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-19",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a right triangle, the hypotenuse is 13 and one leg is 5. What is the sine of the angle opposite the leg of length 5, rounded to the nearest hundredth?",
-    "answer": "0.38",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le12\\right\\}",
-      "x=0\\left\\{0\\le y\\le5\\right\\}",
-      "y=5+(-0.4167)x\\left\\{0\\le x\\le12\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 14,
-      "bottom": -2,
-      "top": 7
-    },
-    "steps": [
-      {
-        "text": "By the Pythagorean theorem, the other leg is 12. Graph it in Desmos as three restricted line segments, then type 5/13 on a new line."
-      },
-      {
-        "text": "5/13 ≈ 0.38.",
-        "image": "assets/screenshots/gt-19.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-20",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Right triangle trigonometry",
-    "question": "In a 45-45-90 triangle, the hypotenuse is 10√2. What is the length of each leg?",
-    "answer": "10",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=0\\left\\{0\\le x\\le10\\right\\}",
-      "x=0\\left\\{0\\le y\\le10\\right\\}",
-      "y=10+(-1)x\\left\\{0\\le x\\le10\\right\\}"
-    ],
-    "bounds": {
-      "left": -2,
-      "right": 12,
-      "bottom": -2,
-      "top": 12
-    },
-    "steps": [
-      {
-        "text": "In a 45-45-90 triangle, the legs are equal and the hypotenuse is leg × √2. Graph the two legs and the hypotenuse as three restricted line segments in Desmos to see the triangle."
-      },
-      {
-        "text": "Each leg is 10.",
-        "image": "assets/screenshots/gt-20.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-21",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle centered at the origin passes through the point (8, 0). If the point (2, k) also lies on the circle and k > 0, what is the value of k, rounded to the nearest tenth?",
-    "answer": "7.7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2=64",
-      "(2,7.746)"
-    ],
-    "bounds": {
-      "left": -10,
-      "right": 10,
-      "bottom": -10,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "The radius is 8, so the circle is x²+y²=64. Type that into Desmos."
-      },
-      {
-        "text": "At x=2: 4+k²=64, so k=√60 ≈ 7.7.",
-        "image": "assets/screenshots/gt-21.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-22",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "What is the radius of the circle given by (x − 3)² + (y + 2)² = 49?",
-    "answer": "7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(x-3)^2+(y+2)^2=49"
-    ],
-    "bounds": {
-      "left": -6,
-      "right": 12,
-      "bottom": -11,
-      "top": 7
-    },
-    "steps": [
-      {
-        "text": "Type (x-3)^2+(y+2)^2=49 into Desmos."
-      },
-      {
-        "text": "The right side is the radius squared: 49 = 7². The radius is 7.",
-        "image": "assets/screenshots/gt-22.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-23",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has a radius of 12. What is the length of an arc corresponding to a central angle of 60°, rounded to the nearest tenth?",
-    "answer": "12.6",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2=144",
-      "(6,10.39)"
-    ],
-    "bounds": {
-      "left": -15,
-      "right": 15,
-      "bottom": -15,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Graph the circle x²+y²=144. The marked point sits where a 60° angle from the positive x-axis meets the circle."
-      },
-      {
-        "text": "Arc length = radius × angle (in radians) = 12 × (π/3) ≈ 12.6.",
-        "image": "assets/screenshots/gt-23.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-24",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has radius 9. What is the arc length for a central angle of π/3 radians, rounded to the nearest hundredth?",
-    "answer": "9.42",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2=81",
-      "(4.5,7.79)"
-    ],
-    "bounds": {
-      "left": -11,
-      "right": 11,
-      "bottom": -11,
-      "top": 11
-    },
-    "steps": [
-      {
-        "text": "Graph the circle x²+y²=81. The marked point sits at angle π/3 on the circle."
-      },
-      {
-        "text": "Arc length = radius × angle = 9 × (π/3) = 3π ≈ 9.42.",
-        "image": "assets/screenshots/gt-24.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-25",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has radius 10. What is the area of a sector with a central angle of 90°, rounded to the nearest tenth?",
-    "answer": "78.5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2=100"
-    ],
-    "bounds": {
-      "left": -11,
-      "right": 11,
-      "bottom": -11,
-      "top": 11
-    },
-    "steps": [
-      {
-        "text": "Graph the circle x²+y²=100. A 90° sector is a quarter of the full circle."
-      },
-      {
-        "text": "Sector area = π(10²)(90/360) = 25π ≈ 78.5.",
-        "image": "assets/screenshots/gt-25.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-26",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has equation x² + y² − 6x + 8y = 0. What is its radius?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2-6x+8y=0"
-    ],
-    "bounds": {
-      "left": -4,
-      "right": 10,
-      "bottom": -11,
-      "top": 3
-    },
-    "steps": [
-      {
-        "text": "Type x^2+y^2-6x+8y=0 directly into Desmos — it plots the circle without needing to complete the square first."
-      },
-      {
-        "text": "Completing the square gives (x-3)²+(y+4)²=25, so the radius is 5.",
-        "image": "assets/screenshots/gt-26.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-27",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has radius 6. An arc on the circle has length 4π. What is the central angle, in degrees?",
-    "answer": "120",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2=36"
-    ],
-    "bounds": {
-      "left": -8,
-      "right": 8,
-      "bottom": -8,
-      "top": 8
-    },
-    "steps": [
-      {
-        "text": "Graph the circle x²+y²=36. The full circumference is 2π(6)=12π."
-      },
-      {
-        "text": "The arc is 4π/12π = 1/3 of the circle, so the central angle is (1/3)(360°) = 120°.",
-        "image": "assets/screenshots/gt-27.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-28",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has a diameter with endpoints (2, 3) and (8, 11). What is the radius?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "(2,3)",
-      "(8,11)",
-      "(x-5)^2+(y-7)^2=25"
-    ],
-    "bounds": {
-      "left": -3,
-      "right": 13,
-      "bottom": -1,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Plot the two endpoints. The diameter length is √((8-2)²+(11-3)²) = √(36+64) = √100 = 10."
-      },
-      {
-        "text": "The radius is half the diameter: 10/2 = 5. The circle centered at the midpoint (5,7) with radius 5 passes through both points.",
-        "image": "assets/screenshots/gt-28.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-29",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has equation (x + 1)² + (y − 5)² = 40. Does the point (5, 2) lie on, inside, or outside the circle? Type \"on\", \"inside\", or \"outside\".",
-    "answer": "outside",
-    "desmosExpressions": [
-      "(x+1)^2+(y-5)^2=40",
-      "(5,2)"
-    ],
-    "bounds": {
-      "left": -10,
-      "right": 10,
-      "bottom": -5,
-      "top": 15
-    },
-    "steps": [
-      {
-        "text": "Graph the circle and plot the point (5,2)."
-      },
-      {
-        "text": "The point sits clearly outside the circle. Checking algebraically: (5+1)²+(2-5)² = 36+9 = 45, which is greater than 40.",
-        "image": "assets/screenshots/gt-29.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-30",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Circles",
-    "question": "A circle has area 144π. What is its circumference, rounded to the nearest tenth?",
-    "answer": "75.4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "x^2+y^2=144"
-    ],
-    "bounds": {
-      "left": -14,
-      "right": 14,
-      "bottom": -14,
-      "top": 14
-    },
-    "steps": [
-      {
-        "text": "Area = πr² = 144π means r² = 144, so r = 12. Graph x²+y²=144 to confirm."
-      },
-      {
-        "text": "Circumference = 2πr = 24π ≈ 75.4.",
-        "image": "assets/screenshots/gt-30.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-31",
-    "category": "Geometry and Trigonometry",
     "subcategory": "Area and volume",
-    "question": "Square A has side lengths that are 5 times the side lengths of square B. The area of square A is k times the area of square B. What is the value of k?",
-    "answer": "25",
-    "answerType": "numeric",
+    "question": "A cube has a volume of 474,552 cubic units. What is the surface area, in square units, of the cube?",
+    "answer": "36504",
     "desmosExpressions": [
-      "y=25"
+      "\\sqrt[3]{474552}",
+      "6(78)^2"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 35
-    },
     "steps": [
       {
-        "text": "Area scales with the square of the side-length ratio. Type 5^2 directly into Desmos."
+        "text": "The volume of a cube is (edge length)³, so take the cube root of 474,552 to find the edge length: ∛474552 = 78 exactly."
       },
       {
-        "text": "Desmos evaluates it to 25.",
-        "image": "assets/screenshots/gt-31.png"
+        "text": "Surface area of a cube is 6×(edge length)²: 6(78)² = 36504."
       }
-    ]
-  },
-  {
-    "id": "gt-32",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A cube has edge length that is 3 times the edge length of a smaller cube. The volume of the larger cube is k times the volume of the smaller. What is the value of k?",
-    "answer": "27",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=27"
     ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 37
-    },
-    "steps": [
-      {
-        "text": "Volume scales with the cube of the edge-length ratio. Type 3^3 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 27.",
-        "image": "assets/screenshots/gt-32.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-33",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A cylinder has radius 4 and height 10. What is its volume, rounded to the nearest tenth?",
-    "answer": "502.7",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=502.7"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -50,
-      "top": 550
-    },
-    "steps": [
-      {
-        "text": "Volume = πr²h. Type pi*4^2*10 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to about 502.7.",
-        "image": "assets/screenshots/gt-33.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-34",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A cone has radius 6 and height 15. What is its volume, rounded to the nearest tenth?",
-    "answer": "565.5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=565.5"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -50,
-      "top": 620
-    },
-    "steps": [
-      {
-        "text": "Volume = (1/3)πr²h. Type (1/3)*pi*6^2*15 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to about 565.5.",
-        "image": "assets/screenshots/gt-34.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-35",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A sphere has radius 6. What is its volume, rounded to the nearest tenth?",
-    "answer": "904.8",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=904.8"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -100,
-      "top": 1000
-    },
-    "steps": [
-      {
-        "text": "Volume = (4/3)πr³. Type (4/3)*pi*6^3 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to about 904.8.",
-        "image": "assets/screenshots/gt-35.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-36",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A rectangular box has length 8, width 5, and volume 200. What is its height?",
-    "answer": "5",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=40x",
-      "(5,200)"
-    ],
-    "bounds": {
-      "left": -1,
-      "right": 8,
-      "bottom": -20,
-      "top": 250
-    },
-    "steps": [
-      {
-        "text": "Volume = length × width × height, so 200 = 8×5×h = 40h. Type y=40x into Desmos."
-      },
-      {
-        "text": "Click the curve at x = 5 — Desmos labels (5, 200), confirming the height is 5.",
-        "image": "assets/screenshots/gt-36.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-37",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A triangle has a base of 14 and a height of 9. What is its area?",
-    "answer": "63",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=63"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 75
-    },
-    "steps": [
-      {
-        "text": "Area = (1/2)(base)(height). Type 0.5*14*9 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 63.",
-        "image": "assets/screenshots/gt-37.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-38",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A trapezoid has parallel sides of length 10 and 16, and a height of 7. What is its area?",
-    "answer": "91",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=91"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -10,
-      "top": 100
-    },
-    "steps": [
-      {
-        "text": "Area = (1/2)(sum of parallel sides)(height). Type 0.5*(10+16)*7 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 91.",
-        "image": "assets/screenshots/gt-38.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-39",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A cube has edge length 6. What is its total surface area?",
-    "answer": "216",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=216"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -20,
-      "top": 230
-    },
-    "steps": [
-      {
-        "text": "A cube has 6 faces, each with area 6². Type 6*6^2 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 216.",
-        "image": "assets/screenshots/gt-39.png"
-      }
-    ]
-  },
-  {
-    "id": "gt-40",
-    "category": "Geometry and Trigonometry",
-    "subcategory": "Area and volume",
-    "question": "A cylindrical cake pan has radius 4 and height 3. A second pan has radius 8 (double) and the same height. How many times more batter (volume) does the second pan hold?",
-    "answer": "4",
-    "answerType": "numeric",
-    "desmosExpressions": [
-      "y=4"
-    ],
-    "bounds": {
-      "left": -5,
-      "right": 10,
-      "bottom": -2,
-      "top": 10
-    },
-    "steps": [
-      {
-        "text": "Volume scales with the square of the radius ratio (height stays the same). Type (8/4)^2 directly into Desmos."
-      },
-      {
-        "text": "Desmos evaluates it to 4 — the second pan holds 4 times as much batter.",
-        "image": "assets/screenshots/gt-40.png"
-      }
-    ]
+    "answerType": "numeric"
   }
 ]

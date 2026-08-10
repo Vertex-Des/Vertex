@@ -1,7 +1,7 @@
 (function () {
   var state = {}; // category -> { problems: [...], index: 0 }
 
-  fetch("data/problems.json")
+  fetch("data/problems.json", { cache: "no-store" })
     .then(function (res) { return res.json(); })
     .then(setupViewers)
     .catch(function (err) {
@@ -84,6 +84,10 @@
       try { viewer._calculatorInstance.destroy(); } catch (e) {}
       viewer._calculatorInstance = null;
     }
+    if (viewer._attemptCalculatorInstance) {
+      try { viewer._attemptCalculatorInstance.destroy(); } catch (e) {}
+      viewer._attemptCalculatorInstance = null;
+    }
 
     viewer._counter.textContent = (s.index + 1) + " / " + s.problems.length;
     viewer._prevBtn.disabled = s.index === 0;
@@ -117,6 +121,17 @@
     question.textContent = problem.question;
     left.appendChild(question);
 
+    if (problem.choices && problem.choices.length) {
+      var choicesList = document.createElement("ul");
+      choicesList.className = "problem-choices";
+      problem.choices.forEach(function (choice) {
+        var li = document.createElement("li");
+        li.textContent = choice;
+        choicesList.appendChild(li);
+      });
+      left.appendChild(choicesList);
+    }
+
     var stopwatch = document.createElement("span");
     stopwatch.className = "stopwatch";
     stopwatch.textContent = "0:00";
@@ -124,6 +139,25 @@
     header.appendChild(left);
     header.appendChild(stopwatch);
     card.appendChild(header);
+
+    var attemptLabel = document.createElement("p");
+    attemptLabel.className = "attempt-label";
+    attemptLabel.textContent = "Try it yourself in Desmos:";
+    card.appendChild(attemptLabel);
+
+    var attemptContainer = document.createElement("div");
+    attemptContainer.className = "desmos-embed small attempt";
+    card.appendChild(attemptContainer);
+
+    if (typeof Desmos !== "undefined") {
+      viewer._attemptCalculatorInstance = Desmos.GraphingCalculator(attemptContainer, {
+        expressions: true,
+        keypad: true,
+        settingsMenu: false,
+        zoomButtons: true,
+        border: false,
+      });
+    }
 
     var checkRow = document.createElement("div");
     checkRow.className = "problem-check-row";
@@ -164,13 +198,6 @@
       var text = document.createElement("div");
       text.textContent = step.text;
       li.appendChild(text);
-      if (step.image) {
-        var img = document.createElement("img");
-        img.src = step.image;
-        img.alt = step.text;
-        img.loading = "lazy";
-        li.appendChild(img);
-      }
       ol.appendChild(li);
     });
     stepsPanel.appendChild(ol);
@@ -217,8 +244,19 @@
           zoomButtons: true,
           border: false,
         });
-        (problem.desmosExpressions || []).forEach(function (latex, i) {
-          viewer._calculatorInstance.setExpression({ id: "e" + i, latex: latex });
+        (problem.desmosExpressions || []).forEach(function (expr, i) {
+          if (expr && typeof expr === "object" && expr.table) {
+            viewer._calculatorInstance.setExpression({
+              id: "e" + i,
+              type: "table",
+              columns: [
+                { latex: "x_1", values: expr.table.x },
+                { latex: "y_1", values: expr.table.y },
+              ],
+            });
+          } else {
+            viewer._calculatorInstance.setExpression({ id: "e" + i, latex: expr });
+          }
         });
         if (problem.bounds) {
           viewer._calculatorInstance.setMathBounds(problem.bounds);
