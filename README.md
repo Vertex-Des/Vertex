@@ -2,7 +2,7 @@
 
 **Live site:** [vertex-des.github.io/Vertex](https://vertex-des.github.io/Vertex/)
 
-Vertex is a student-run free wesbite that teaches high schoolers how to use [Desmos](https://www.desmos.com/) — the free graphing calculator built into the Digital SAT — as a primary problem-solving tool, not just something to double-check work with.
+Vertex is a student-run website that teaches high schoolers how to use [Desmos](https://www.desmos.com/) — the free graphing calculator built into the Digital SAT — as a primary problem-solving tool, not just something to double-check work with.
 
 Most prep resources teach SAT math the same way they did before every test-taker had a graphing calculator on screen. Vertex flips that: graph an intersection instead of solving a system by hand, run a regression instead of guessing an equation, read a stats list instead of computing standard deviation by formula.
 
